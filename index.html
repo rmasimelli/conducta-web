@@ -425,19 +425,19 @@
     #portfolio h2 .dot { color: var(--gold); }
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
     }
-    .portfolio-card {
-      background: var(--navy);
+    .portfolio-item {
       display: flex;
       flex-direction: column;
-      position: relative;
+      gap: 20px;
     }
-    .portfolio-card-image {
+    .portfolio-item-image {
       aspect-ratio: 4/3;
       position: relative;
       overflow: hidden;
+      background: var(--navy);
     }
     /* Carousel */
     .carousel {
@@ -505,9 +505,8 @@
       padding: 0;
     }
     .carousel-dot.active { background: var(--gold); }
-    .portfolio-card-content {
-      padding: 24px 28px 28px;
-      border-top: 1px solid rgba(175,140,83,0.15);
+    .portfolio-item-info {
+      padding: 0;
     }
     .portfolio-card-tag {
       font-size: 0.72rem;
@@ -517,9 +516,10 @@
     }
     .portfolio-card-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       letter-spacing: 0.04em;
       color: var(--white);
+      line-height: 1;
     }
 
     /* CONTACTO */
@@ -664,6 +664,7 @@
       #soluciones { padding: 80px 24px; }
       .accordion-body-inner { padding-right: 0; }
       #portfolio { padding: 80px 24px; }
+      .portfolio-grid { grid-template-columns: 1fr; gap: 48px; }
       #contacto { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
       .form-row { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 12px; padding: 32px 24px; text-align: center; }
@@ -798,72 +799,79 @@
       <h2>Casos<span class="dot">.</span></h2>
     </div>
     <div class="portfolio-grid reveal">
-      <div class="portfolio-card" data-carousel>
-        <div class="portfolio-card-image">
-        <div class="carousel">
-          <div class="carousel-slide active">
-            <img src="/farmacia-1.jpg" alt="Farmacia Lutilsky — identidad visual" />
+
+      <!-- Farmacia Lutilsky -->
+      <div class="portfolio-item" data-carousel>
+        <div class="portfolio-item-image">
+          <div class="carousel">
+            <div class="carousel-slide active">
+              <img src="/farmacia-1.jpg" alt="Farmacia Lutilsky — identidad visual" />
+            </div>
+            <div class="carousel-slide">
+              <img src="/farmacia-2.jpg" alt="Farmacia Lutilsky — isotipo" />
+            </div>
+            <div class="carousel-slide">
+              <img src="/farmacia-3.jpg" alt="Farmacia Lutilsky — aplicaciones" />
+            </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/farmacia-2.jpg" alt="Farmacia Lutilsky — isotipo" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/farmacia-3.jpg" alt="Farmacia Lutilsky — aplicaciones de marca" />
+          <button class="carousel-btn prev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn next" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Imagen 1"></button>
+            <button class="carousel-dot" aria-label="Imagen 2"></button>
+            <button class="carousel-dot" aria-label="Imagen 3"></button>
           </div>
         </div>
-        <button class="carousel-btn prev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-        </button>
-        <button class="carousel-btn next" aria-label="Siguiente">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </button>
-        <div class="carousel-dots">
-          <button class="carousel-dot active" aria-label="Imagen 1"></button>
-          <button class="carousel-dot" aria-label="Imagen 2"></button>
-          <button class="carousel-dot" aria-label="Imagen 3"></button>
-        </div>
-        <div class="portfolio-card-content">
+        <div class="portfolio-item-info">
           <p class="portfolio-card-tag">Consultoría estratégica · Identidad visual</p>
           <h3 class="portfolio-card-title">Farmacia Lutilsky</h3>
         </div>
       </div>
-      <div class="portfolio-card" data-carousel>
-        <div class="portfolio-card-image">
-        <div class="carousel">
-          <div class="carousel-slide active">
-            <img src="/wagner-1.jpg" alt="Wagner Bros Teck — aplicaciones de marca" />
+
+      <!-- Wagner Bros Teck -->
+      <div class="portfolio-item" data-carousel>
+        <div class="portfolio-item-image">
+          <div class="carousel">
+            <div class="carousel-slide active">
+              <img src="/wagner-1.jpg" alt="Wagner Bros Teck — aplicaciones" />
+            </div>
+            <div class="carousel-slide">
+              <img src="/wagner-2.jpg" alt="Wagner Bros Teck — logotipo" />
+            </div>
+            <div class="carousel-slide">
+              <img src="/wagner-3.jpg" alt="Wagner Bros Teck — isotipo" />
+            </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/wagner-2.jpg" alt="Wagner Bros Teck — logotipo" />
-          </div>
-          <div class="carousel-slide">
-            <img src="/wagner-3.jpg" alt="Wagner Bros Teck — isotipo" />
+          <button class="carousel-btn prev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn next" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Imagen 1"></button>
+            <button class="carousel-dot" aria-label="Imagen 2"></button>
+            <button class="carousel-dot" aria-label="Imagen 3"></button>
           </div>
         </div>
-        <button class="carousel-btn prev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-        </button>
-        <button class="carousel-btn next" aria-label="Siguiente">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </button>
-        <div class="carousel-dots">
-          <button class="carousel-dot active" aria-label="Imagen 1"></button>
-          <button class="carousel-dot" aria-label="Imagen 2"></button>
-          <button class="carousel-dot" aria-label="Imagen 3"></button>
-        </div>
-        <div class="portfolio-card-content">
+        <div class="portfolio-item-info">
           <p class="portfolio-card-tag">Creación de identidad visual · Variables de marca</p>
           <h3 class="portfolio-card-title">Wagner Bros Teck</h3>
         </div>
       </div>
+
     </div>
   </section>
 

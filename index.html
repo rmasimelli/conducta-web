@@ -162,13 +162,24 @@
       inset: 0;
       background: var(--black);
       z-index: 0;
+      overflow: hidden;
     }
+    .hero-bg video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-bg video.loaded { opacity: 1; }
     .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
-      opacity: 0.35;
+      background: rgba(11,18,30,0.62);
+      z-index: 1;
       pointer-events: none;
     }
     .hero-diagonal {
@@ -624,12 +635,42 @@
       line-height: 1.6;
     }
 
+    .social-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(175,140,83,0.3);
+      color: rgba(248,249,250,0.5);
+      text-decoration: none;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .social-link:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .social-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
     footer {
       padding: 40px 60px;
       border-top: 1px solid rgba(175,140,83,0.12);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
     footer img { height: 28px; width: auto; opacity: 0.35; mix-blend-mode: screen; }
     footer p {
@@ -683,6 +724,24 @@
       <li><a href="#soluciones">Soluciones</a></li>
       <li><a href="#portfolio">Trabajo</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li>
+        <a href="https://www.instagram.com/somos.conducta/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex;align-items:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/somosconducta" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:flex;align-items:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -699,7 +758,11 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg">
+      <video id="heroVideo" autoplay muted loop playsinline>
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero-diagonal"></div>
     <div class="hero-gold-line"></div>
     <div class="hero-content">
@@ -922,10 +985,38 @@
   <!-- FOOTER -->
   <footer>
     <img src="/isotipo-blanco.png" alt="Conducta." />
+    <div class="social-links">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/somos.conducta/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/company/somosconducta" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+    </div>
     <p>© 2026 Conducta. Todos los derechos reservados.</p>
   </footer>
 
   <script>
+    // Hero video fade-in
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+      heroVideo.addEventListener('canplaythrough', () => {
+        heroVideo.classList.add('loaded');
+      });
+      // Fallback if already loaded
+      if (heroVideo.readyState >= 3) heroVideo.classList.add('loaded');
+    }
+
     // Navbar scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {

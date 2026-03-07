@@ -718,7 +718,8 @@
       <h2>Hablemos<br>de tu<br>organización<span class="dot">.</span></h2>
       <p>Completá el formulario y nos ponemos en contacto para coordinar una consulta inicial sin costo.</p>
     </div>
-    <div class="contact-form reveal">
+    <form name="contacto" method="POST" data-netlify="true" class="contact-form reveal">
+      <input type="hidden" name="form-name" value="contacto" />
       <div class="form-row">
         <div class="form-group">
           <label>Nombre</label>
@@ -746,11 +747,8 @@
         <label>Mensaje</label>
         <textarea placeholder="Describí brevemente el problema o proyecto que tenés en mente."></textarea>
       </div>
-      <button class="form-submit" id="formBtn">Enviar consulta</button>
-      <div class="form-success" id="formSuccess">
-        Consulta recibida. Nos pondremos en contacto a la brevedad.
-      </div>
-    </div>
+      <button class="form-submit" type="submit">Enviar consulta</button>
+    </form>
   </section>
 
   <!-- FOOTER -->
@@ -810,10 +808,7 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Form feedback
-    document.getElementById('formBtn').addEventListener('click', () => {
-      document.getElementById('formSuccess').style.display = 'block';
-    });
+
   </script>
 </body>
 </html>

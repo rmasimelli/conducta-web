@@ -426,25 +426,18 @@
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2px;
+      gap: 40px;
     }
     .portfolio-card {
       background: var(--navy);
-      aspect-ratio: 4/3;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 32px;
+      position: relative;
+    }
+    .portfolio-card-image {
+      aspect-ratio: 4/3;
       position: relative;
       overflow: hidden;
-    }
-    .portfolio-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(11,18,30,0.92) 0%, rgba(11,18,30,0.2) 60%, transparent 100%);
-      z-index: 2;
-      pointer-events: none;
     }
     /* Carousel */
     .carousel {
@@ -472,7 +465,6 @@
       z-index: 4;
       background: rgba(11,18,30,0.5);
       border: 1px solid rgba(175,140,83,0.3);
-      color: var(--gold);
       width: 36px;
       height: 36px;
       display: flex;
@@ -495,8 +487,9 @@
     .carousel-btn.next { right: 14px; }
     .carousel-dots {
       position: absolute;
-      bottom: 76px;
-      left: 32px;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 4;
       display: flex;
       gap: 6px;
@@ -513,8 +506,8 @@
     }
     .carousel-dot.active { background: var(--gold); }
     .portfolio-card-content {
-      position: relative;
-      z-index: 3;
+      padding: 24px 28px 28px;
+      border-top: 1px solid rgba(175,140,83,0.15);
     }
     .portfolio-card-tag {
       font-size: 0.72rem;
@@ -806,6 +799,7 @@
     </div>
     <div class="portfolio-grid reveal">
       <div class="portfolio-card" data-carousel>
+        <div class="portfolio-card-image">
         <div class="carousel">
           <div class="carousel-slide active">
             <img src="/farmacia-1.jpg" alt="Farmacia Lutilsky — identidad visual" />
@@ -838,6 +832,7 @@
         </div>
       </div>
       <div class="portfolio-card" data-carousel>
+        <div class="portfolio-card-image">
         <div class="carousel">
           <div class="carousel-slide active">
             <img src="/wagner-1.jpg" alt="Wagner Bros Teck — aplicaciones de marca" />

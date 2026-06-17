@@ -465,32 +465,44 @@
       flex: 0 0 100%;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 0;
     }
     .portfolio-item-image {
-      aspect-ratio: 16/9;
+      aspect-ratio: 4/3;
+      max-height: 58vh;
       position: relative;
       overflow: hidden;
       background: var(--navy);
     }
+
+    .portfolio-overlay-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 5;
+      padding: 56px 28px 20px;
+      background: linear-gradient(to top, rgba(11,18,30,0.95) 0%, rgba(11,18,30,0.55) 60%, transparent 100%);
+    }
     .portfolio-outer-info {
       display: flex;
+      align-items: flex-end;
       justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
+      gap: 16px;
+    }
+    .portfolio-outer-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
     .portfolio-outer-nav {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 32px;
+      gap: 10px;
+      flex-shrink: 0;
     }
     .pslider-btn {
       background: none;
       border: 1px solid rgba(175,140,83,0.3);
-      width: 40px; height: 40px;
+      width: 36px; height: 36px;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer;
       transition: border-color 0.3s, background 0.3s;
@@ -553,15 +565,7 @@
     }
     .carousel-btn.prev { left: 14px; }
     .carousel-btn.next { right: 14px; }
-    .carousel-dots {
-      position: absolute;
-      bottom: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 4;
-      display: flex;
-      gap: 6px;
-    }
+    .carousel-dots { display: none; }
     .carousel-dot {
       width: 6px;
       height: 6px;
@@ -578,7 +582,8 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       color: var(--gold);
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+      opacity: 0.9;
     }
     .portfolio-card-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -587,6 +592,7 @@
       color: var(--white);
       line-height: 1;
     }
+    .pslider-btn { color: var(--gold); }
 
     /* CONTACTO */
     #contacto {
@@ -763,6 +769,8 @@
       #soluciones { padding: 80px 24px; }
       .accordion-body-inner { padding-right: 0; }
       #portfolio { padding: 80px 24px; }
+      .portfolio-outer-info { flex-direction: column; gap: 16px; }
+      .portfolio-item-image { max-height: 50vh; }
       #contacto { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
       .form-row { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 12px; padding: 32px 24px; text-align: center; }
@@ -981,188 +989,193 @@
       <div class="portfolio-outer-slide" data-carousel>
         <div class="portfolio-item-image">
           <div class="carousel">
-            <div class="carousel-slide active">
-              <img src="/farmacia-1.jpg" alt="Farmacia Lutilsky — imagen 1" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/farmacia-2.jpg" alt="Farmacia Lutilsky — imagen 2" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/farmacia-3.jpg" alt="Farmacia Lutilsky — imagen 3" />
-            </div>
+              <div class="carousel-slide active"><img src="/farmacia-1.jpg" alt="Farmacia Lutilsky — imagen 1" /></div>
+              <div class="carousel-slide"><img src="/farmacia-2.jpg" alt="Farmacia Lutilsky — imagen 2" /></div>
+              <div class="carousel-slide"><img src="/farmacia-3.jpg" alt="Farmacia Lutilsky — imagen 3" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-          <div class="carousel-dots">
-            <button class="carousel-dot active" aria-label="Imagen 1"></button>
-            <button class="carousel-dot" aria-label="Imagen 2"></button>
-            <button class="carousel-dot" aria-label="Imagen 3"></button>
+          <div class="portfolio-overlay-bar">
+            <div class="portfolio-outer-info">
+              <div class="portfolio-outer-info-left">
+                <h3 class="portfolio-card-title">Farmacia Lutilsky</h3>
+                <p class="portfolio-card-tag">Consultoría estratégica · Identidad visual</p>
+              </div>
+              <div class="portfolio-outer-nav">
+                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="pslider-dots">
+              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
+              <button class="pslider-dot" aria-label="Proyecto 2"></button>
+              <button class="pslider-dot" aria-label="Proyecto 3"></button>
+              <button class="pslider-dot" aria-label="Proyecto 4"></button>
+              <button class="pslider-dot" aria-label="Proyecto 5"></button>
+                </div>
+                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="portfolio-outer-info">
-          <h3 class="portfolio-card-title">Farmacia Lutilsky</h3>
-          <p class="portfolio-card-tag">Consultoría estratégica · Identidad visual</p>
         </div>
       </div>
       <div class="portfolio-outer-slide" data-carousel>
         <div class="portfolio-item-image">
           <div class="carousel">
-            <div class="carousel-slide active">
-              <img src="/wagner-1.jpg" alt="Wagner Bros Teck — imagen 1" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/wagner-2.jpg" alt="Wagner Bros Teck — imagen 2" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/wagner-3.jpg" alt="Wagner Bros Teck — imagen 3" />
-            </div>
+              <div class="carousel-slide active"><img src="/wagner-1.jpg" alt="Wagner Bros Teck — imagen 1" /></div>
+              <div class="carousel-slide"><img src="/wagner-2.jpg" alt="Wagner Bros Teck — imagen 2" /></div>
+              <div class="carousel-slide"><img src="/wagner-3.jpg" alt="Wagner Bros Teck — imagen 3" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-          <div class="carousel-dots">
-            <button class="carousel-dot active" aria-label="Imagen 1"></button>
-            <button class="carousel-dot" aria-label="Imagen 2"></button>
-            <button class="carousel-dot" aria-label="Imagen 3"></button>
+          <div class="portfolio-overlay-bar">
+            <div class="portfolio-outer-info">
+              <div class="portfolio-outer-info-left">
+                <h3 class="portfolio-card-title">Wagner Bros Teck</h3>
+                <p class="portfolio-card-tag">Creación de identidad visual · Variables de marca</p>
+              </div>
+              <div class="portfolio-outer-nav">
+                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="pslider-dots">
+              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
+              <button class="pslider-dot" aria-label="Proyecto 2"></button>
+              <button class="pslider-dot" aria-label="Proyecto 3"></button>
+              <button class="pslider-dot" aria-label="Proyecto 4"></button>
+              <button class="pslider-dot" aria-label="Proyecto 5"></button>
+                </div>
+                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="portfolio-outer-info">
-          <h3 class="portfolio-card-title">Wagner Bros Teck</h3>
-          <p class="portfolio-card-tag">Creación de identidad visual · Variables de marca</p>
         </div>
       </div>
       <div class="portfolio-outer-slide" data-carousel>
         <div class="portfolio-item-image">
           <div class="carousel">
-            <div class="carousel-slide active">
-              <img src="/evidenpsia-1.jpg" alt="Evidenpsia — imagen 1" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/evidenpsia-2.jpg" alt="Evidenpsia — imagen 2" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/evidenpsia-3.jpg" alt="Evidenpsia — imagen 3" />
-            </div>
+              <div class="carousel-slide active"><img src="/evidenpsia-1.jpg" alt="Evidenpsia — imagen 1" /></div>
+              <div class="carousel-slide"><img src="/evidenpsia-2.jpg" alt="Evidenpsia — imagen 2" /></div>
+              <div class="carousel-slide"><img src="/evidenpsia-3.jpg" alt="Evidenpsia — imagen 3" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-          <div class="carousel-dots">
-            <button class="carousel-dot active" aria-label="Imagen 1"></button>
-            <button class="carousel-dot" aria-label="Imagen 2"></button>
-            <button class="carousel-dot" aria-label="Imagen 3"></button>
+          <div class="portfolio-overlay-bar">
+            <div class="portfolio-outer-info">
+              <div class="portfolio-outer-info-left">
+                <h3 class="portfolio-card-title">Evidenpsia</h3>
+                <p class="portfolio-card-tag">Creación de identidad visual · Consultoría estratégica</p>
+              </div>
+              <div class="portfolio-outer-nav">
+                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="pslider-dots">
+              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
+              <button class="pslider-dot" aria-label="Proyecto 2"></button>
+              <button class="pslider-dot" aria-label="Proyecto 3"></button>
+              <button class="pslider-dot" aria-label="Proyecto 4"></button>
+              <button class="pslider-dot" aria-label="Proyecto 5"></button>
+                </div>
+                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="portfolio-outer-info">
-          <h3 class="portfolio-card-title">Evidenpsia</h3>
-          <p class="portfolio-card-tag">Creación de identidad visual · Consultoría estratégica</p>
         </div>
       </div>
       <div class="portfolio-outer-slide" data-carousel>
         <div class="portfolio-item-image">
           <div class="carousel">
-            <div class="carousel-slide active">
-              <img src="/pleno-1.jpg" alt="Pleno — imagen 1" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/pleno-2.jpg" alt="Pleno — imagen 2" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/pleno-3.jpg" alt="Pleno — imagen 3" />
-            </div>
+              <div class="carousel-slide active"><img src="/pleno-1.jpg" alt="Pleno — imagen 1" /></div>
+              <div class="carousel-slide"><img src="/pleno-2.jpg" alt="Pleno — imagen 2" /></div>
+              <div class="carousel-slide"><img src="/pleno-3.jpg" alt="Pleno — imagen 3" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-          <div class="carousel-dots">
-            <button class="carousel-dot active" aria-label="Imagen 1"></button>
-            <button class="carousel-dot" aria-label="Imagen 2"></button>
-            <button class="carousel-dot" aria-label="Imagen 3"></button>
+          <div class="portfolio-overlay-bar">
+            <div class="portfolio-outer-info">
+              <div class="portfolio-outer-info-left">
+                <h3 class="portfolio-card-title">Pleno</h3>
+                <p class="portfolio-card-tag">Creación de identidad visual · Consultoría estratégica</p>
+              </div>
+              <div class="portfolio-outer-nav">
+                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="pslider-dots">
+              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
+              <button class="pslider-dot" aria-label="Proyecto 2"></button>
+              <button class="pslider-dot" aria-label="Proyecto 3"></button>
+              <button class="pslider-dot" aria-label="Proyecto 4"></button>
+              <button class="pslider-dot" aria-label="Proyecto 5"></button>
+                </div>
+                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="portfolio-outer-info">
-          <h3 class="portfolio-card-title">Pleno</h3>
-          <p class="portfolio-card-tag">Creación de identidad visual · Consultoría estratégica</p>
         </div>
       </div>
       <div class="portfolio-outer-slide" data-carousel>
         <div class="portfolio-item-image">
           <div class="carousel">
-            <div class="carousel-slide active">
-              <img src="/ponti-1.jpg" alt="Ponti — imagen 1" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/ponti-2.jpg" alt="Ponti — imagen 2" />
-            </div>
-            <div class="carousel-slide">
-              <img src="/ponti-3.jpg" alt="Ponti — imagen 3" />
-            </div>
+              <div class="carousel-slide active"><img src="/ponti-1.jpg" alt="Ponti — imagen 1" /></div>
+              <div class="carousel-slide"><img src="/ponti-2.jpg" alt="Ponti — imagen 2" /></div>
+              <div class="carousel-slide"><img src="/ponti-3.jpg" alt="Ponti — imagen 3" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-          <div class="carousel-dots">
-            <button class="carousel-dot active" aria-label="Imagen 1"></button>
-            <button class="carousel-dot" aria-label="Imagen 2"></button>
-            <button class="carousel-dot" aria-label="Imagen 3"></button>
+          <div class="portfolio-overlay-bar">
+            <div class="portfolio-outer-info">
+              <div class="portfolio-outer-info-left">
+                <h3 class="portfolio-card-title">Ponti</h3>
+                <p class="portfolio-card-tag">Creación de marca · Identidad visual</p>
+              </div>
+              <div class="portfolio-outer-nav">
+                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="pslider-dots">
+              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
+              <button class="pslider-dot" aria-label="Proyecto 2"></button>
+              <button class="pslider-dot" aria-label="Proyecto 3"></button>
+              <button class="pslider-dot" aria-label="Proyecto 4"></button>
+              <button class="pslider-dot" aria-label="Proyecto 5"></button>
+                </div>
+                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="portfolio-outer-info">
-          <h3 class="portfolio-card-title">Ponti</h3>
-          <p class="portfolio-card-tag">Creación de marca · Identidad visual</p>
-        </div>
       </div>
-      </div>
-      <div class="portfolio-outer-nav">
-        <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
-          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <div class="pslider-dots">
-          <button class="pslider-dot active" aria-label="Proyecto 1"></button>
-          <button class="pslider-dot" aria-label="Proyecto 2"></button>
-          <button class="pslider-dot" aria-label="Proyecto 3"></button>
-          <button class="pslider-dot" aria-label="Proyecto 4"></button>
-          <button class="pslider-dot" aria-label="Proyecto 5"></button>
-        </div>
-        <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
       </div>
     </div>
   </section>
@@ -1330,21 +1343,33 @@
     const outerSlider = document.querySelector('.portfolio-outer-slider');
     if (outerSlider) {
       const outerTrack = outerSlider.querySelector('.portfolio-outer-track');
-      const outerDots = outerSlider.querySelectorAll('.pslider-dot');
-      const outerPrev = outerSlider.querySelector('.pslider-prev');
-      const outerNext = outerSlider.querySelector('.pslider-next');
+      const outerPrevBtns = outerSlider.querySelectorAll('.pslider-prev');
+      const outerNextBtns = outerSlider.querySelectorAll('.pslider-next');
       const outerTotal = outerSlider.querySelectorAll('.portfolio-outer-slide').length;
       let outerCurrent = 0;
+
+      function getAllDotSets() {
+        return outerSlider.querySelectorAll('.pslider-dots');
+      }
 
       function outerGoTo(index) {
         outerCurrent = (index + outerTotal) % outerTotal;
         outerTrack.style.transform = `translateX(-${outerCurrent * 100}%)`;
-        outerDots.forEach((d, i) => d.classList.toggle('active', i === outerCurrent));
+        getAllDotSets().forEach(dotSet => {
+          dotSet.querySelectorAll('.pslider-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === outerCurrent);
+          });
+        });
       }
 
-      outerPrev.addEventListener('click', () => outerGoTo(outerCurrent - 1));
-      outerNext.addEventListener('click', () => outerGoTo(outerCurrent + 1));
-      outerDots.forEach((dot, i) => dot.addEventListener('click', () => outerGoTo(i)));
+      outerPrevBtns.forEach(btn => btn.addEventListener('click', () => outerGoTo(outerCurrent - 1)));
+      outerNextBtns.forEach(btn => btn.addEventListener('click', () => outerGoTo(outerCurrent + 1)));
+
+      getAllDotSets().forEach(dotSet => {
+        dotSet.querySelectorAll('.pslider-dot').forEach((dot, i) => {
+          dot.addEventListener('click', () => outerGoTo(i));
+        });
+      });
 
       let outerTimer = setInterval(() => outerGoTo(outerCurrent + 1), 7000);
       outerSlider.addEventListener('mouseenter', () => clearInterval(outerTimer));
@@ -1356,22 +1381,18 @@
     // Carousel interno
     document.querySelectorAll('[data-carousel]').forEach(card => {
       const slides = card.querySelectorAll('.carousel-slide');
-      const dots = card.querySelectorAll('.carousel-dot');
       const prevBtn = card.querySelector('.carousel-btn.prev');
       const nextBtn = card.querySelector('.carousel-btn.next');
       let current = 0;
 
       function goTo(index) {
         slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
         current = (index + slides.length) % slides.length;
         slides[current].classList.add('active');
-        dots[current].classList.add('active');
       }
 
       prevBtn.addEventListener('click', () => goTo(current - 1));
       nextBtn.addEventListener('click', () => goTo(current + 1));
-      dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
 
       // Auto-advance every 4 seconds
       let timer = setInterval(() => goTo(current + 1), 4000);

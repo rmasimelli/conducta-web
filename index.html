@@ -44,9 +44,8 @@
     "knowsAbout": ["branding", "identidad visual", "comunicación estratégica", "diagnóstico institucional", "naming"]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <!-- Adobe Fonts (Helvetica Neue LT Pro) -->
+  <link rel="stylesheet" href="https://use.typekit.net/mdg5mik.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -62,8 +61,8 @@
     body {
       background: var(--black);
       color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 400;
       overflow-x: hidden;
     }
 
@@ -137,9 +136,10 @@
     }
     .nav-mobile.open { display: flex; }
     .nav-mobile a {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
-      letter-spacing: 0.06em;
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2.6rem;
+      letter-spacing: -0.01em;
       color: var(--white);
       text-decoration: none;
       transition: color 0.3s;
@@ -208,14 +208,6 @@
       z-index: 10;
       max-width: 820px;
     }
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
     .hero-logo-img {
       height: clamp(60px, 10vw, 110px);
       width: auto;
@@ -227,29 +219,35 @@
     .hero-sub {
       margin-top: 28px;
       font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-      font-weight: 300;
+      font-weight: 400;
       color: rgba(248,249,250,0.65);
       max-width: 500px;
       line-height: 1.65;
       opacity: 0;
       animation: fadeUp 0.9s 0.6s forwards;
     }
+    .btn-gold {
+      display: inline-block;
+      padding: 15px 36px;
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      color: var(--black);
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .btn-gold:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
     .hero-cta {
       margin-top: 44px;
-      display: inline-block;
-      padding: 14px 36px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
       opacity: 0;
       animation: fadeUp 0.9s 0.8s forwards;
-    }
-    .hero-cta:hover {
-      background: var(--gold);
-      color: var(--black);
     }
 
     /* SPLIT SECTIONS (Conducta + Román) */
@@ -283,10 +281,11 @@
       justify-content: flex-end;
     }
     .split-left-content h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.4rem, 3.5vw, 3.6rem);
-      line-height: 0.95;
-      letter-spacing: 0.02em;
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 3.2vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
       color: var(--white);
       margin-top: 12px;
     }
@@ -304,13 +303,7 @@
       line-height: 1.8;
       color: rgba(248,249,250,0.7);
     }
-    .split-right strong { color: var(--white); font-weight: 500; }
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
+    .split-right strong { color: var(--white); font-weight: 700; }
     .credencial {
       margin-top: 32px;
       padding-top: 24px;
@@ -321,15 +314,73 @@
     }
     .cred-item { display: flex; flex-direction: column; gap: 4px; }
     .cred-number {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
       font-size: 2rem;
       color: var(--gold);
-      letter-spacing: 0.04em;
+      letter-spacing: -0.01em;
     }
     .cred-label {
       font-size: 0.82rem;
       letter-spacing: 0.1em;
       color: rgba(248,249,250,0.4);
+    }
+
+    /* METODO */
+    #metodo {
+      padding: 120px 60px;
+      border-top: 1px solid rgba(175,140,83,0.2);
+    }
+    #metodo .section-header {
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+    #metodo h2 {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 4.6vw, 4.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    #metodo h2 .dot { color: var(--gold); }
+    #metodo .section-header p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(248,249,250,0.6);
+    }
+    .metodo-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .metodo-step {
+      background: rgba(248,249,250,0.02);
+      border: 1px solid rgba(248,249,250,0.08);
+      padding: 32px 28px;
+      transition: border-color 0.3s;
+    }
+    .metodo-step:hover { border-color: rgba(175,140,83,0.35); }
+    .metodo-step-number {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .metodo-step-name {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .metodo-step p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(248,249,250,0.55);
     }
 
     /* SOLUCIONES */
@@ -353,95 +404,147 @@
       margin-bottom: 64px;
     }
     #soluciones h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      line-height: 0.95;
-      letter-spacing: 0.02em;
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 4.6vw, 4.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
     }
     #soluciones h2 .dot { color: var(--gold); }
-    .accordion {
-      border-top: 1px solid rgba(248,249,250,0.12);
+    .service-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; position: relative; z-index: 2; }
+    .service-card { background: rgba(248,249,250,0.02); border: 1px solid rgba(248,249,250,0.08); cursor: pointer; transition: border-color 0.3s; }
+    .service-card:hover { border-color: rgba(175,140,83,0.35); }
+    .service-card.open { border-color: rgba(175,140,83,0.3); }
+    .service-card-header { padding: 36px 32px 32px; display: flex; flex-direction: column; gap: 10px; position: relative; user-select: none; }
+    .service-card-name { font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.9rem; letter-spacing: -0.01em; color: var(--white); line-height: 1.1; }
+    .service-card-tagline { font-size: 0.88rem; color: rgba(248,249,250,0.45); line-height: 1.5; max-width: 220px; }
+    .service-card-toggle { position: absolute; top: 32px; right: 28px; width: 30px; height: 30px; border: 1px solid rgba(175,140,83,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.2rem; font-weight: 400; line-height: 1; transition: transform 0.35s, background 0.3s, border-color 0.3s; }
+    .service-card.open .service-card-toggle { transform: rotate(45deg); background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .service-card-body { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .service-card-body-inner { padding: 0 32px 36px; display: flex; flex-direction: column; gap: 20px; }
+    .service-card-body-inner p { font-size: 0.95rem; line-height: 1.75; color: rgba(248,249,250,0.65); }
+    .service-card-cta { display: inline-block; margin-top: 4px; }
+
+    /* CASOS */
+    .case-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+    .case-card {
       position: relative;
-      z-index: 2;
+      min-height: 380px;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--navy);
+      overflow: hidden;
     }
-    .accordion-item {
-      border-bottom: 1px solid rgba(248,249,250,0.12);
+    .case-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--navy);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateY(100%);
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
     }
-    .accordion-trigger {
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 36px 0;
+    .case-card:hover .case-card-overlay,
+    .case-card:focus-within .case-card-overlay,
+    .case-card:focus .case-card-overlay {
+      transform: translateY(0);
+    }
+    .case-card-name {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .case-card-desc {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: rgba(248,249,250,0.75);
+    }
+
+    /* FAQ */
+    #faq {
+      padding: 120px 60px;
+      border-top: 1px solid rgba(175,140,83,0.2);
+    }
+    .faq-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    #faq .section-header {
+      margin-bottom: 0;
+    }
+    #faq h2 {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 4.6vw, 4.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    #faq h2 .dot { color: var(--gold); }
+    #faq .section-header p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(248,249,250,0.6);
+      max-width: 380px;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .faq-item {
+      background: rgba(248,249,250,0.02);
+      border: 1px solid rgba(248,249,250,0.08);
+      transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(175,140,83,0.35); }
+    .faq-item.open { border-color: rgba(175,140,83,0.3); }
+    .faq-question {
+      padding: 26px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      text-align: left;
+      gap: 20px;
+      cursor: pointer;
+      user-select: none;
     }
-    .accordion-trigger:hover .acc-question { color: var(--gold); }
-    .acc-question {
-      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-      font-weight: 300;
+    .faq-question h3 {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
       color: var(--white);
-      transition: color 0.3s;
-      line-height: 1.3;
     }
-    .acc-icon {
+    .faq-toggle {
       flex-shrink: 0;
-      width: 36px;
-      height: 36px;
+      width: 28px;
+      height: 28px;
       border: 1px solid rgba(175,140,83,0.4);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.4s, background 0.3s;
-    }
-    .acc-icon svg {
-      width: 14px; height: 14px;
-      stroke: var(--gold);
-      transition: transform 0.4s;
-    }
-    .accordion-item.open .acc-icon { background: var(--gold); }
-    .accordion-item.open .acc-icon svg {
-      stroke: var(--black);
-      transform: rotate(45deg);
-    }
-    .accordion-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
-    }
-    .accordion-body-inner {
-      padding-bottom: 48px;
-      padding-right: 80px;
-    }
-    .acc-service { margin-bottom: 36px; }
-    .acc-service h4 {
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
       color: var(--gold);
-      margin-bottom: 10px;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform 0.35s, background 0.3s, border-color 0.3s;
     }
-    .acc-service p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: rgba(248,249,250,0.65);
-    }
-    .acc-cta {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 12px 32px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-    }
-    .acc-cta:hover { background: var(--gold); color: var(--black); }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .faq-answer-inner { padding: 0 28px 26px; }
+    .faq-answer-inner p { font-size: 0.92rem; line-height: 1.7; color: rgba(248,249,250,0.6); }
 
     /* PORTFOLIO */
     #portfolio {
@@ -449,251 +552,38 @@
       border-top: 1px solid rgba(175,140,83,0.2);
     }
     #portfolio h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      line-height: 0.95;
-      letter-spacing: 0.02em;
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 4.6vw, 4.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
       margin-bottom: 64px;
     }
     #portfolio h2 .dot { color: var(--gold); }
-    .portfolio-outer-slider { position: relative; overflow: hidden; }
-    .portfolio-outer-track {
-      display: flex;
-      transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .portfolio-outer-slide {
-      flex: 0 0 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .portfolio-item-image {
-      height: 80vh;
-      min-height: 420px;
-      position: relative;
-      overflow: hidden;
-      background: var(--navy);
-    }
-
-    .portfolio-overlay-bar {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 5;
-      padding: 56px 28px 20px;
-      background: linear-gradient(to top, rgba(11,18,30,0.95) 0%, rgba(11,18,30,0.55) 60%, transparent 100%);
-    }
-    .portfolio-outer-info {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .portfolio-outer-info-left {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .portfolio-outer-nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-    .pslider-btn {
-      background: none;
-      border: 1px solid rgba(175,140,83,0.3);
-      width: 36px; height: 36px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: border-color 0.3s, background 0.3s;
-      flex-shrink: 0;
-    }
-    .pslider-btn:hover { border-color: var(--gold); background: rgba(175,140,83,0.1); }
-    .pslider-btn svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .pslider-dots { display: flex; gap: 10px; align-items: center; }
-    .pslider-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: rgba(248,249,250,0.2);
-      border: none; cursor: pointer; padding: 0;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .pslider-dot.active { background: var(--gold); transform: scale(1.3); }
-    /* Carousel */
-    .carousel {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-    .carousel-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-    .carousel-slide.active { opacity: 1; }
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 4;
-      background: rgba(11,18,30,0.5);
-      border: 1px solid rgba(175,140,83,0.3);
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.3s, border-color 0.3s;
-      backdrop-filter: blur(4px);
-    }
-    .carousel-btn:hover {
-      background: rgba(175,140,83,0.2);
-      border-color: var(--gold);
-    }
-    .carousel-btn svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--gold);
-    }
-    .carousel-btn.prev { left: 14px; }
-    .carousel-btn.next { right: 14px; }
-    .carousel-dots { display: none; }
-    .carousel-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(248,249,250,0.35);
-      cursor: pointer;
-      transition: background 0.3s;
-      border: none;
-      padding: 0;
-    }
-    .carousel-dot.active { background: var(--gold); }
-
-    .portfolio-card-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      color: var(--gold);
-      margin-bottom: 4px;
-      opacity: 0.9;
-    }
-    .portfolio-card-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1;
-    }
-    .pslider-btn { color: var(--gold); }
 
     /* CONTACTO */
     #contacto {
-      padding: 120px 60px 80px;
+      padding: 120px 60px 100px;
       border-top: 1px solid rgba(175,140,83,0.2);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
     }
-    .contact-left h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      line-height: 0.95;
-      letter-spacing: 0.02em;
+    .contact-content {
+      max-width: 560px;
+    }
+    .contact-content h2 {
+      font-family: "helvetica-neue-lt-pro", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
       margin-bottom: 24px;
     }
-    .contact-left h2 .dot { color: var(--gold); }
-    .contact-left p {
+    .contact-content h2 .dot { color: var(--gold); }
+    .contact-content p {
       font-size: 1.05rem;
       line-height: 1.75;
       color: rgba(248,249,250,0.6);
-      max-width: 380px;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .form-group label {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      color: rgba(248,249,250,0.4);
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      background: rgba(248,249,250,0.04);
-      border: 1px solid rgba(248,249,250,0.1);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 300;
-      padding: 14px 16px;
-      outline: none;
-      transition: border-color 0.3s;
-      -webkit-appearance: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--gold); }
-    .form-group select option { background: var(--black); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-submit {
-      background: none;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      padding: 16px 40px;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      align-self: flex-start;
-    }
-    .form-submit:hover { background: var(--gold); color: var(--black); }
-    .form-group input:invalid:not(:placeholder-shown),
-    .form-group textarea:invalid:not(:placeholder-shown),
-    .form-group select:invalid:not([value=""]) {
-      border-color: rgba(175,140,83,0.6);
-    }
-    .form-group input.error,
-    .form-group textarea.error,
-    .form-group select.error {
-      border-color: #c0392b;
-    }
-    .field-error {
-      font-size: 0.72rem;
-      color: #c0392b;
-      margin-top: 4px;
-      display: none;
-    }
-    .field-error.visible { display: block; }
-    .form-success {
-      display: none;
-      margin-top: 16px;
-      padding: 16px 20px;
-      border: 1px solid rgba(175,140,83,0.4);
-      color: var(--gold);
-      font-size: 0.85rem;
-      line-height: 1.6;
+      max-width: 460px;
+      margin-bottom: 40px;
     }
 
     .social-links {
@@ -739,6 +629,12 @@
       letter-spacing: 0.08em;
       color: rgba(248,249,250,0.25);
     }
+    footer p a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer p a:hover { color: var(--gold); }
 
     /* ANIMACIONES */
     @keyframes fadeUp {
@@ -767,12 +663,15 @@
       .split-left-content { padding: 40px 28px; }
       .split-right { padding: 48px 28px; }
       #soluciones { padding: 80px 24px; }
+      #metodo { padding: 80px 24px; }
+      .metodo-steps { grid-template-columns: 1fr; }
       .accordion-body-inner { padding-right: 0; }
       #portfolio { padding: 80px 24px; }
+      .case-cards { grid-template-columns: 1fr; }
       .portfolio-outer-info { flex-direction: column; gap: 16px; }
       .portfolio-item-image { height: 55vh; min-height: 320px; }
-      #contacto { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
-      .form-row { grid-template-columns: 1fr; }
+      .faq-split { grid-template-columns: 1fr; gap: 32px; }
+      #contacto { padding: 80px 24px 60px; }
       footer { flex-direction: column; gap: 12px; padding: 32px 24px; text-align: center; }
       .credencial { gap: 24px; }
     }
@@ -787,8 +686,10 @@
     <ul class="nav-links">
       <li><a href="#nosotros">Conducta</a></li>
       <li><a href="#roman">Equipo</a></li>
+      <li><a href="#metodo">Método</a></li>
       <li><a href="#soluciones">Soluciones</a></li>
       <li><a href="#portfolio">Trabajo</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li>
         <a href="https://www.instagram.com/somos.conducta/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex;align-items:center;">
@@ -818,8 +719,10 @@
   <div class="nav-mobile" id="navMobile">
     <a href="#nosotros" class="mobile-link">Conducta</a>
     <a href="#roman" class="mobile-link">Equipo</a>
+    <a href="#metodo" class="mobile-link">Método</a>
     <a href="#soluciones" class="mobile-link">Soluciones</a>
     <a href="#portfolio" class="mobile-link">Trabajo</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
   </div>
 
@@ -833,10 +736,9 @@
     <div class="hero-diagonal"></div>
     <div class="hero-gold-line"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Diagnóstico &nbsp;·&nbsp; Estrategia &nbsp;·&nbsp; Identidad</p>
       <img src="/logo-blanco.png" alt="Conducta." class="hero-logo-img" />
       <p class="hero-sub">Diagnóstico estratégico e identidad institucional basados en evidencia.</p>
-      <a href="#contacto" class="hero-cta">Agendá una consulta</a>
+      <a href="https://wa.me/5492954315270?text=Hola%21%20Soy%20%5Bnombre%5D%2C%20de%20%5Borganizaci%C3%B3n%5D.%20Me%20gustar%C3%ADa%20contarte%20sobre%20%5Bmotivo/proyecto%5D." class="hero-cta btn-gold" target="_blank" rel="noopener">Agendá una consulta</a>
     </div>
   </section>
 
@@ -846,7 +748,6 @@
       <div class="split-left reveal" style="background-image: url('/conducta-bg.jpg');">
         <div class="split-left-overlay"></div>
         <div class="split-left-content">
-          <p class="section-label">Quiénes somos</p>
           <h2>Qué es<br>Conducta<span class="dot">.</span></h2>
         </div>
       </div>
@@ -878,7 +779,6 @@
       <div class="split-left reveal" style="background: #0d1824; background-image: url('/roman-foto.jpg'); background-size: cover; background-position: center top;">
         <div class="split-left-overlay" style="background: rgba(11,18,30,0.45);"></div>
         <div class="split-left-content">
-          <p class="section-label">Fundador</p>
           <h2>Román<br>Masimelli<span class="dot">.</span></h2>
         </div>
       </div>
@@ -890,291 +790,181 @@
     </div>
   </section>
 
+  <!-- METODO -->
+  <section id="metodo">
+    <div class="section-header reveal">
+      <h2>Cómo trabajamos<span class="dot">.</span></h2>
+      <p>Tres fases, siempre en el mismo orden. Ninguna decisión de diseño o mensaje se toma sin la anterior.</p>
+    </div>
+    <div class="metodo-steps reveal">
+      <div class="metodo-step">
+        <div class="metodo-step-number">01</div>
+        <div class="metodo-step-name">Diagnóstico</div>
+        <p>Analizamos cómo responde tu audiencia a tu marca hoy: qué genera confianza, qué la aleja, y por qué.</p>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-step-number">02</div>
+        <div class="metodo-step-name">Posicionamiento</div>
+        <p>Definimos qué debe comunicar tu marca para generar la decisión que buscás en esa audiencia.</p>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-step-number">03</div>
+        <div class="metodo-step-name">Implementación</div>
+        <p>Bajamos esas decisiones a cada pieza y canal, eliminando fricciones en el camino a contactarte o comprar.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- SOLUCIONES -->
   <section id="soluciones">
     <div class="soluciones-navy-block"></div>
     <div class="section-header reveal">
-      <p class="section-label">Áreas de intervención</p>
       <h2>Soluciones<span class="dot">.</span></h2>
     </div>
 
-    <div class="accordion">
-
-      <!-- PYMES -->
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
-          <span class="acc-question">¿Tu empresa necesita comunicar mejor para crecer?</span>
-          <span class="acc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-          </span>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            <div class="acc-service">
-              <h4>Diagnóstico de comunicación</h4>
-              <p>Identificamos las fallas en cómo tu empresa comunica — en digital, en identidad visual y en el proceso de ventas — y diseñamos una estrategia orientada a resultados concretos: más consultas, más conversiones, más clientes.</p>
-            </div>
-            <div class="acc-service">
-              <h4>Identidad visual para pymes</h4>
-              <p>Construimos o rediseñamos la identidad de tu marca desde el diagnóstico estratégico. Cada decisión visual está fundada en evidencia y alineada con tu objetivo de negocio.</p>
-            </div>
-            <a href="#contacto" class="acc-cta">Agendá una consulta</a>
-          </div>
+    <div class="service-cards">
+      <div class="service-card">
+        <div class="service-card-header">
+          <h3 class="service-card-name">Pymes</h3>
+          <p class="service-card-tagline">Diagnóstico y estrategia para empresas en crecimiento</p>
+          <span class="service-card-toggle">+</span>
         </div>
+        <div class="service-card-body"><div class="service-card-body-inner">
+          <div><p>Identificamos las fallas en cómo tu empresa comunica — en digital, en identidad visual y en el proceso de ventas — y diseñamos una estrategia orientada a resultados concretos: más consultas, más conversiones, más clientes.</p></div>
+          <div><p>Construimos o rediseñamos la identidad de tu marca desde el diagnóstico estratégico. Cada decisión visual está fundada en evidencia y alineada con tu objetivo de negocio.</p></div>
+          <a href="https://wa.me/5492954315270?text=Hola%21%20Soy%20%5Bnombre%5D%2C%20de%20%5Borganizaci%C3%B3n%5D.%20Me%20gustar%C3%ADa%20contarte%20sobre%20%5Bmotivo/proyecto%5D." class="service-card-cta btn-gold" target="_blank" rel="noopener">Agendá una consulta</a>
+        </div></div>
       </div>
-
-      <!-- INSTITUCIONES -->
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
-          <span class="acc-question">¿Tu organización necesita fortalecer su reputación?</span>
-          <span class="acc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-          </span>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            <div class="acc-service">
-              <h4>Auditoría de comunicación institucional</h4>
-              <p>Analizamos la coherencia entre la identidad, el mensaje y la percepción real de tu organización. Identificamos brechas estructurales y diseñamos una estrategia orientada a fortalecer la reputación y la visibilidad institucional.</p>
-            </div>
-            <div class="acc-service">
-              <h4>Identidad visual institucional</h4>
-              <p>Desarrollamos o actualizamos el sistema de identidad visual de tu organización, alineado con sus valores, su misión y su audiencia estratégica. Cada componente está justificado en función de los objetivos institucionales.</p>
-            </div>
-            <a href="#contacto" class="acc-cta">Agendá una consulta</a>
-          </div>
+      <div class="service-card">
+        <div class="service-card-header">
+          <h3 class="service-card-name">Instituciones</h3>
+          <p class="service-card-tagline">Reputación y comunicación institucional rigurosa</p>
+          <span class="service-card-toggle">+</span>
         </div>
+        <div class="service-card-body"><div class="service-card-body-inner">
+          <div><p>Analizamos la coherencia entre la identidad, el mensaje y la percepción real de tu organización. Identificamos brechas y diseñamos una estrategia orientada a fortalecer la reputación institucional.</p></div>
+          <div><p>Desarrollamos o actualizamos el sistema de identidad visual de tu organización, alineado con sus valores, su misión y su audiencia estratégica.</p></div>
+          <a href="https://wa.me/5492954315270?text=Hola%21%20Soy%20%5Bnombre%5D%2C%20de%20%5Borganizaci%C3%B3n%5D.%20Me%20gustar%C3%ADa%20contarte%20sobre%20%5Bmotivo/proyecto%5D." class="service-card-cta btn-gold" target="_blank" rel="noopener">Agendá una consulta</a>
+        </div></div>
       </div>
-
-      <!-- NUEVAS MARCAS -->
-      <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false">
-          <span class="acc-question">¿Estás construyendo una marca desde cero?</span>
-          <span class="acc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-          </span>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            <div class="acc-service">
-              <h4>Creación de marca completa</h4>
-              <p>Desde el naming hasta el manual de identidad. Construimos tu marca con base en un diagnóstico de mercado, análisis de la competencia y definición del posicionamiento que necesitás para diferenciarte desde el primer día.</p>
-            </div>
-            <div class="acc-service">
-              <h4>Estrategia de comunicación inicial</h4>
-              <p>Definimos el tono de voz, el sistema de mensajes y los canales prioritarios para que tu marca arranque con una dirección clara y coherente. Sin improvisación, sin correcciones costosas después.</p>
-            </div>
-            <a href="#contacto" class="acc-cta">Agendá una consulta</a>
-          </div>
+      <div class="service-card">
+        <div class="service-card-header">
+          <h3 class="service-card-name">Comunicación Interna</h3>
+          <p class="service-card-tagline">Diagnóstico y protocolos para la comunicación entre áreas</p>
+          <span class="service-card-toggle">+</span>
         </div>
+        <div class="service-card-body"><div class="service-card-body-inner">
+          <div><p>Identificamos los patrones de comunicación entre áreas, equipos y niveles jerárquicos. Distinguimos fricciones estructurales de fricciones interpersonales para dirigir la intervención al problema real.</p></div>
+          <div><p>Diseñamos protocolos formales de comunicación cuando su ausencia es la causa de la fricción. Entregamos documentos operativos claros, con roles y canales definidos.</p></div>
+          <a href="https://wa.me/5492954315270?text=Hola%21%20Soy%20%5Bnombre%5D%2C%20de%20%5Borganizaci%C3%B3n%5D.%20Me%20gustar%C3%ADa%20contarte%20sobre%20%5Bmotivo/proyecto%5D." class="service-card-cta btn-gold" target="_blank" rel="noopener">Agendá una consulta</a>
+        </div></div>
       </div>
-
+      <div class="service-card">
+        <div class="service-card-header">
+          <h3 class="service-card-name">Nuevas marcas</h3>
+          <p class="service-card-tagline">Construcción de marca desde cero, con método</p>
+          <span class="service-card-toggle">+</span>
+        </div>
+        <div class="service-card-body"><div class="service-card-body-inner">
+          <div><p>Desde el naming hasta el manual de identidad. Construimos tu marca con base en un diagnóstico de mercado y definición del posicionamiento que necesitás para diferenciarte desde el primer día.</p></div>
+          <div><p>Definimos el tono de voz, el sistema de mensajes y los canales prioritarios para que tu marca arranque con una dirección clara y coherente.</p></div>
+          <a href="https://wa.me/5492954315270?text=Hola%21%20Soy%20%5Bnombre%5D%2C%20de%20%5Borganizaci%C3%B3n%5D.%20Me%20gustar%C3%ADa%20contarte%20sobre%20%5Bmotivo/proyecto%5D." class="service-card-cta btn-gold" target="_blank" rel="noopener">Agendá una consulta</a>
+        </div></div>
+      </div>
     </div>
   </section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="reveal">
-      <p class="section-label">Trabajo</p>
       <h2>Casos<span class="dot">.</span></h2>
     </div>
-    <div class="portfolio-outer-slider reveal">
-      <div class="portfolio-outer-track">
-      <div class="portfolio-outer-slide" data-carousel>
-        <div class="portfolio-item-image">
-          <div class="carousel">
-              <div class="carousel-slide active"><img src="/farmacia-1.jpg" alt="Farmacia Lutilsky — imagen 1" /></div>
-              <div class="carousel-slide"><img src="/farmacia-2.jpg" alt="Farmacia Lutilsky — imagen 2" /></div>
-              <div class="carousel-slide"><img src="/farmacia-3.jpg" alt="Farmacia Lutilsky — imagen 3" /></div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-          <div class="portfolio-overlay-bar">
-            <div class="portfolio-outer-info">
-              <div class="portfolio-outer-info-left">
-                <h3 class="portfolio-card-title">Farmacia Lutilsky</h3>
-                <p class="portfolio-card-tag">Consultoría estratégica · Identidad visual</p>
-              </div>
-              <div class="portfolio-outer-nav">
-                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="pslider-dots">
-              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
-              <button class="pslider-dot" aria-label="Proyecto 2"></button>
-              <button class="pslider-dot" aria-label="Proyecto 3"></button>
-              <button class="pslider-dot" aria-label="Proyecto 4"></button>
-              <button class="pslider-dot" aria-label="Proyecto 5"></button>
-                </div>
-                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+    <div class="case-cards reveal">
+      <div class="case-card" style="background-image: url('/farmacia-1.jpg');" tabindex="0">
+        <div class="case-card-overlay">
+          <h3 class="case-card-name">Farmacia Lutilsky</h3>
+          <p class="case-card-desc">Una farmacia con más de 40 años de trayectoria atravesaba una caída sostenida en ventas y una migración de clientes hacia productos de menor margen. Rediseñamos su identidad visual completa —logo, sistema visual e isotipo heráldico— a partir de un diagnóstico estratégico previo. La clientela reconoció y valoró el cambio.</p>
         </div>
       </div>
-      <div class="portfolio-outer-slide" data-carousel>
-        <div class="portfolio-item-image">
-          <div class="carousel">
-              <div class="carousel-slide active"><img src="/wagner-1.jpg" alt="Wagner Bros Teck — imagen 1" /></div>
-              <div class="carousel-slide"><img src="/wagner-2.jpg" alt="Wagner Bros Teck — imagen 2" /></div>
-              <div class="carousel-slide"><img src="/wagner-3.jpg" alt="Wagner Bros Teck — imagen 3" /></div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-          <div class="portfolio-overlay-bar">
-            <div class="portfolio-outer-info">
-              <div class="portfolio-outer-info-left">
-                <h3 class="portfolio-card-title">Wagner Bros Teck</h3>
-                <p class="portfolio-card-tag">Creación de identidad visual · Variables de marca</p>
-              </div>
-              <div class="portfolio-outer-nav">
-                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="pslider-dots">
-              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
-              <button class="pslider-dot" aria-label="Proyecto 2"></button>
-              <button class="pslider-dot" aria-label="Proyecto 3"></button>
-              <button class="pslider-dot" aria-label="Proyecto 4"></button>
-              <button class="pslider-dot" aria-label="Proyecto 5"></button>
-                </div>
-                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="case-card" style="background-image: url('/wagner-1.jpg');" tabindex="0">
+        <div class="case-card-overlay">
+          <h3 class="case-card-name">Wagner Bros Teck</h3>
+          <p class="case-card-desc">Una empresa de autopartes que nunca había tenido logo ni marca buscaba renovarse, sin tener claro por dónde empezar. El diagnóstico mostró que la clientela ya la reconocía por el apellido de su dueño —Wagner— y ese fue el insumo principal para construir la identidad: logo, isotipo, variables de marca y sistema de aplicaciones.</p>
         </div>
       </div>
-      <div class="portfolio-outer-slide" data-carousel>
-        <div class="portfolio-item-image">
-          <div class="carousel">
-              <div class="carousel-slide active"><img src="/evidenpsia-1.jpg" alt="Evidenpsia — imagen 1" /></div>
-              <div class="carousel-slide"><img src="/evidenpsia-2.jpg" alt="Evidenpsia — imagen 2" /></div>
-              <div class="carousel-slide"><img src="/evidenpsia-3.jpg" alt="Evidenpsia — imagen 3" /></div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-          <div class="portfolio-overlay-bar">
-            <div class="portfolio-outer-info">
-              <div class="portfolio-outer-info-left">
-                <h3 class="portfolio-card-title">Evidenpsia</h3>
-                <p class="portfolio-card-tag">Creación de identidad visual · Consultoría estratégica</p>
-              </div>
-              <div class="portfolio-outer-nav">
-                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="pslider-dots">
-              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
-              <button class="pslider-dot" aria-label="Proyecto 2"></button>
-              <button class="pslider-dot" aria-label="Proyecto 3"></button>
-              <button class="pslider-dot" aria-label="Proyecto 4"></button>
-              <button class="pslider-dot" aria-label="Proyecto 5"></button>
-                </div>
-                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="case-card" style="background-image: url('/evidenpsia-1.jpg');" tabindex="0">
+        <div class="case-card-overlay">
+          <h3 class="case-card-name">Evidenpsia</h3>
+          <p class="case-card-desc">Las profesionales detrás de Evidenpsia no conseguían pacientes y estaban desmotivadas con su propio proyecto. Hicimos un rebranding completo —logo, paleta, estrategia de redes y roadmap— para que la marca representara lo que realmente eran y pudieran cobrar lo que su trabajo valía. Hoy consiguen los pacientes que buscaban, al valor que buscaban, y no tienen lugar para más.</p>
         </div>
       </div>
-      <div class="portfolio-outer-slide" data-carousel>
-        <div class="portfolio-item-image">
-          <div class="carousel">
-              <div class="carousel-slide active"><img src="/pleno-1.jpg" alt="Pleno — imagen 1" /></div>
-              <div class="carousel-slide"><img src="/pleno-2.jpg" alt="Pleno — imagen 2" /></div>
-              <div class="carousel-slide"><img src="/pleno-3.jpg" alt="Pleno — imagen 3" /></div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-          <div class="portfolio-overlay-bar">
-            <div class="portfolio-outer-info">
-              <div class="portfolio-outer-info-left">
-                <h3 class="portfolio-card-title">Pleno</h3>
-                <p class="portfolio-card-tag">Creación de identidad visual · Consultoría estratégica</p>
-              </div>
-              <div class="portfolio-outer-nav">
-                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="pslider-dots">
-              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
-              <button class="pslider-dot" aria-label="Proyecto 2"></button>
-              <button class="pslider-dot" aria-label="Proyecto 3"></button>
-              <button class="pslider-dot" aria-label="Proyecto 4"></button>
-              <button class="pslider-dot" aria-label="Proyecto 5"></button>
-                </div>
-                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="case-card" style="background-image: url('/pleno-1.jpg');" tabindex="0">
+        <div class="case-card-overlay">
+          <h3 class="case-card-name">Pleno</h3>
+          <p class="case-card-desc">Diseñamos y desarrollamos el sitio web de Pleno, aplicando su sistema de identidad visual.</p>
         </div>
       </div>
-      <div class="portfolio-outer-slide" data-carousel>
-        <div class="portfolio-item-image">
-          <div class="carousel">
-              <div class="carousel-slide active"><img src="/ponti-1.jpg" alt="Ponti — imagen 1" /></div>
-              <div class="carousel-slide"><img src="/ponti-2.jpg" alt="Ponti — imagen 2" /></div>
-              <div class="carousel-slide"><img src="/ponti-3.jpg" alt="Ponti — imagen 3" /></div>
-          </div>
-          <button class="carousel-btn prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="carousel-btn next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-          <div class="portfolio-overlay-bar">
-            <div class="portfolio-outer-info">
-              <div class="portfolio-outer-info-left">
-                <h3 class="portfolio-card-title">Ponti</h3>
-                <p class="portfolio-card-tag">Creación de marca · Identidad visual</p>
-              </div>
-              <div class="portfolio-outer-nav">
-                <button class="pslider-btn pslider-prev" aria-label="Proyecto anterior">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="pslider-dots">
-              <button class="pslider-dot active" aria-label="Proyecto 1"></button>
-              <button class="pslider-dot" aria-label="Proyecto 2"></button>
-              <button class="pslider-dot" aria-label="Proyecto 3"></button>
-              <button class="pslider-dot" aria-label="Proyecto 4"></button>
-              <button class="pslider-dot" aria-label="Proyecto 5"></button>
-                </div>
-                <button class="pslider-btn pslider-next" aria-label="Proyecto siguiente">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="case-card" style="background-image: url('/ponti-1.jpg');" tabindex="0">
+        <div class="case-card-overlay">
+          <h3 class="case-card-name">Ponti</h3>
+          <p class="case-card-desc">Creamos el naming, el logo, la paleta, el tono de voz y la estrategia de redes de Ponti: la identidad completa de una marca que se prepara para salir al mercado. Hoy el sistema está terminado; solo resta la aprobación formal del nombre en el INPI para el lanzamiento.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="faq-split">
+      <div class="section-header reveal">
+        <h2>Preguntas frecuentes<span class="dot">.</span></h2>
+        <p>Todo lo que quizás te preguntes antes de escribirnos.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+        <div class="faq-question">
+          <h3>¿Por qué no hay precios en esta web?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>No cotizamos sin diagnóstico previo. El costo depende del problema real de cada empresa, no de un paquete cerrado — se define después de la primera conversación, no antes.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>¿Cómo empieza un proyecto?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Siempre con diagnóstico. Antes de proponer un servicio puntual, entendemos el problema real — a veces no es el que se pidió al principio.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>¿Qué necesitamos de vos para arrancar?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>El briefing completo y los materiales existentes: logos anteriores, accesos, manuales de marca si los tenés. Con eso empieza el diagnóstico.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>¿Hacen solo identidad visual, o también estrategia?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Las dos cosas, y en ese orden. No diseñamos sin haber definido antes qué tiene que lograr esa identidad.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>¿Trabajan con empresas fuera de Argentina?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Sí, con empresas de cualquier país de habla hispana. La mayor parte del proceso se coordina de forma remota.</p>
+        </div></div>
       </div>
       </div>
     </div>
@@ -1182,46 +972,11 @@
 
   <!-- CONTACTO -->
   <section id="contacto">
-    <div class="contact-left reveal">
-      <p class="section-label">Contacto</p>
+    <div class="contact-content reveal">
       <h2>Hablemos<br>de tu<br>organización<span class="dot">.</span></h2>
-      <p>Completá el formulario y nos ponemos en contacto para coordinar una consulta inicial sin costo.</p>
+      <p>Escribinos por WhatsApp y coordinamos una consulta inicial sin costo.</p>
+      <a href="https://wa.me/5492954315270?text=Hola%21%20Soy%20%5Bnombre%5D%2C%20de%20%5Borganizaci%C3%B3n%5D.%20Me%20gustar%C3%ADa%20contarte%20sobre%20%5Bmotivo/proyecto%5D." class="btn-gold" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
     </div>
-    <form name="contacto" method="POST" data-netlify="true" action="/gracias" class="contact-form reveal">
-      <input type="hidden" name="form-name" value="contacto" />
-      <div class="form-row">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required />
-          <span class="field-error">Este campo es obligatorio.</span>
-        </div>
-        <div class="form-group">
-          <label>Empresa / Institución</label>
-          <input type="text" name="empresa" placeholder="Tu organización" required />
-          <span class="field-error">Este campo es obligatorio.</span>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="tu@email.com" required />
-          <span class="field-error">Ingresá un email válido.</span>
-      </div>
-      <div class="form-group">
-        <label>Área de interés</label>
-        <select name="servicio" required>
-          
-          <option value="" disabled selected>Seleccioná una opción</option>
-          <option>Consultoría estratégica</option>
-          <option>Identidad y branding</option>
-          <option>No estoy seguro, necesito orientación</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Mensaje</label>
-        <textarea name="mensaje" required placeholder="Describí brevemente el problema o proyecto que tenés en mente."></textarea>
-      </div>
-      <button class="form-submit" type="submit">Enviar consulta</button>
-    </form>
   </section>
 
   <!-- FOOTER -->
@@ -1245,8 +1000,9 @@
         </svg>
       </a>
     </div>
-    <p>© 2026 Conducta. Todos los derechos reservados.</p>
+    <p>© 2026 Conducta. Todos los derechos reservados. · <a href="mailto:somos@conducta.com.ar">somos@conducta.com.ar</a></p>
   </footer>
+
 
   <script>
     // Hero video fade-in
@@ -1279,25 +1035,6 @@
       });
     });
 
-    // Accordion
-    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.closest('.accordion-item');
-        const body = item.querySelector('.accordion-body');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.accordion-item').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.accordion-body').style.maxHeight = '0';
-          i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-
     // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1309,99 +1046,40 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Form validation
-    const form = document.querySelector('form[name="contacto"]');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        let valid = true;
-        const fields = form.querySelectorAll('[required]');
-        fields.forEach(field => {
-          const errorEl = field.parentElement.querySelector('.field-error');
-          if (!field.value || field.value === '') {
-            field.classList.add('error');
-            if (errorEl) errorEl.classList.add('visible');
-            valid = false;
-          } else {
-            field.classList.remove('error');
-            if (errorEl) errorEl.classList.remove('visible');
-          }
+
+
+
+
+    // Service cards
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.querySelector('.service-card-header').addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+        document.querySelectorAll('.service-card').forEach(c => {
+          c.classList.remove('open');
+          c.querySelector('.service-card-body').style.maxHeight = '0';
         });
-        if (!valid) e.preventDefault();
-      });
-      form.querySelectorAll('[required]').forEach(field => {
-        field.addEventListener('input', () => {
-          const errorEl = field.parentElement.querySelector('.field-error');
-          if (field.value) {
-            field.classList.remove('error');
-            if (errorEl) errorEl.classList.remove('visible');
-          }
-        });
-      });
-    }
-
-    // Portfolio outer slider
-    const outerSlider = document.querySelector('.portfolio-outer-slider');
-    if (outerSlider) {
-      const outerTrack = outerSlider.querySelector('.portfolio-outer-track');
-      const outerPrevBtns = outerSlider.querySelectorAll('.pslider-prev');
-      const outerNextBtns = outerSlider.querySelectorAll('.pslider-next');
-      const outerTotal = outerSlider.querySelectorAll('.portfolio-outer-slide').length;
-      let outerCurrent = 0;
-
-      function getAllDotSets() {
-        return outerSlider.querySelectorAll('.pslider-dots');
-      }
-
-      function outerGoTo(index) {
-        outerCurrent = (index + outerTotal) % outerTotal;
-        outerTrack.style.transform = `translateX(-${outerCurrent * 100}%)`;
-        getAllDotSets().forEach(dotSet => {
-          dotSet.querySelectorAll('.pslider-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === outerCurrent);
-          });
-        });
-      }
-
-      outerPrevBtns.forEach(btn => btn.addEventListener('click', () => outerGoTo(outerCurrent - 1)));
-      outerNextBtns.forEach(btn => btn.addEventListener('click', () => outerGoTo(outerCurrent + 1)));
-
-      getAllDotSets().forEach(dotSet => {
-        dotSet.querySelectorAll('.pslider-dot').forEach((dot, i) => {
-          dot.addEventListener('click', () => outerGoTo(i));
-        });
-      });
-
-      let outerTimer = setInterval(() => outerGoTo(outerCurrent + 1), 7000);
-      outerSlider.addEventListener('mouseenter', () => clearInterval(outerTimer));
-      outerSlider.addEventListener('mouseleave', () => {
-        outerTimer = setInterval(() => outerGoTo(outerCurrent + 1), 7000);
-      });
-    }
-
-    // Carousel interno
-    document.querySelectorAll('[data-carousel]').forEach(card => {
-      const slides = card.querySelectorAll('.carousel-slide');
-      const prevBtn = card.querySelector('.carousel-btn.prev');
-      const nextBtn = card.querySelector('.carousel-btn.next');
-      let current = 0;
-
-      function goTo(index) {
-        slides[current].classList.remove('active');
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add('active');
-      }
-
-      prevBtn.addEventListener('click', () => goTo(current - 1));
-      nextBtn.addEventListener('click', () => goTo(current + 1));
-
-      // Auto-advance every 4 seconds
-      let timer = setInterval(() => goTo(current + 1), 4000);
-      card.addEventListener('mouseenter', () => clearInterval(timer));
-      card.addEventListener('mouseleave', () => {
-        timer = setInterval(() => goTo(current + 1), 4000);
+        if (!isOpen) {
+          card.classList.add('open');
+          const body = card.querySelector('.service-card-body');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
       });
     });
-
+    // FAQ
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-answer').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const answer = item.querySelector('.faq-answer');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
     // Smooth scroll fix for Safari
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -1413,5 +1091,6 @@
       });
     });
   </script>
+
 </body>
 </html>

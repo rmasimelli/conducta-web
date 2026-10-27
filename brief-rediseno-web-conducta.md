@@ -389,7 +389,7 @@ Todo lo que dice "propuesta" necesita el OK de Román antes de publicarse. Claud
 - B. "Resolvemos problemas de comunicación en pymes."
 - C. "Comunicación externa e interna para pymes."
 
-Elegido por Román (27/10/2026): "Comunicación interna y externa para pymes." [A CONFIRMAR: invierte el orden de los frentes que fija la sección 4 (externa, después interna). Si es un error de tipeo, queda la opción C.]
+Elegido por Román (27/10/2026): "Comunicación interna y externa para pymes." Confirmado por Román ese mismo día: el H1 va con este orden, como excepción a la regla de orden de la sección 4. En el resto de la página se mantiene el orden externa, después interna.
 
 Lead (propuesta): "Ordenamos cómo tu empresa se comunica con sus clientes y cómo se comunican tus equipos entre sí, con base en las ciencias del comportamiento. Trabajamos con pymes de 10 a 500 personas."
 

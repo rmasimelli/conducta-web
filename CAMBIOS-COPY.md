@@ -312,6 +312,13 @@ Cada caso muestra ahora, sin hover: frente ("Comunicación externa"), cliente, s
 - Después: logotipo, enlaces a las secciones, somos@conducta.com.ar, íconos de Instagram y LinkedIn, y "© 2026 Conducta."
 - Origen: Brief §6 (sin separador con punto medio).
 
+## Ronda 3: fila de clientes y nota del hero (28/10/2026)
+
+- Fila de clientes: se suman los logos de Pleno y Wagner Bros Teck (este último es la reducción: el círculo con la W calada). Orden: Evidenpsia, Farmacia Lutilsky, Ponti, Pleno, Wagner Bros Teck, Soluciones Analíticas.
+- Todos los logos de la fila, a la mitad del tamaño anterior; Pleno y Wagner un poco más chicos porque son macizos. En el celular se ven al mismo tamaño que en desktop (antes se achicaban un 20% más).
+- "Por WhatsApp. La primera consulta no tiene costo.": no estaba en negrita; pasa de 14 a 12 px. Suma un paso a la escala tipográfica (--fs-micro), que ahora tiene 8.
+- Origen: Ronda 3, pedido de Román.
+
 ---
 
 ## Pendientes [COMPLETAR]

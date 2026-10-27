@@ -26,7 +26,7 @@
   --line-light: rgba(11,18,30,.10);
   --surface-light: rgba(28,57,92,.05);
 
-  /* Tipografía (7 pasos, nada fuera de esta escala) */
+  /* Tipografía (8 pasos, nada fuera de esta escala) */
   --font: "helvetica-neue-lt-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --fs-display: clamp(2.75rem, 5.6vw, 5rem);    /* H1 */
   --fs-h2: clamp(2.125rem, 3.8vw, 3.5rem);
@@ -35,6 +35,7 @@
   --fs-lead: clamp(1.125rem, 1.4vw, 1.3125rem);
   --fs-body: 1.0625rem;                          /* 17 px */
   --fs-small: 0.875rem;                          /* 14 px */
+  --fs-micro: 0.75rem;                           /* 12 px, solo la nota debajo del CTA del hero */
   --lh-tight: 1.04;   /* display y H2 */
   --lh-snug: 1.25;    /* H3 */
   --lh-body: 1.62;
@@ -541,8 +542,8 @@ strong { font-weight: 700; }
 }
 
 .hero__note {
-  margin-top: 16px;
-  font-size: var(--fs-small);
+  margin-top: 14px;
+  font-size: var(--fs-micro);
   color: var(--fg-2);
 }
 
@@ -550,19 +551,15 @@ strong { font-weight: 700; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 40px;
+  gap: 14px 28px;
   margin-top: clamp(48px, 7vw, 96px);
 }
 
-/* Cada logo trae su alto en --logo-h; en mobile se achican un 20% */
+/* Cada logo trae su alto en --logo-h, compensado para que pesen parecido */
 .clients img {
-  height: calc(var(--logo-h, 32px) * .8);
+  height: var(--logo-h, 20px);
   width: auto;
   opacity: .6;
-}
-
-@media (min-width: 640px) {
-  .clients img { height: var(--logo-h, 32px); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -578,6 +575,17 @@ strong { font-weight: 700; }
 @media (min-width: 900px) {
   .hero__title { grid-column: 1 / span 9; }
   .hero__lead { grid-column: 1 / span 6; }
+}
+
+/* Desktop: el hero ocupa la pantalla entera y el contenido queda centrado
+   en vertical (el mismo espacio arriba y abajo, contando el menú). */
+@media (min-width: 1024px) {
+  .hero {
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block: var(--header-h);
+  }
 }
 
 /* 5.2 Soluciones: dos bloques oscuros con corte, uno debajo del otro.

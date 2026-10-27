@@ -9,17 +9,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <title>Conducta. | Consultora de comunicación para pymes</title>
   <meta name="description" content="Consultora de comunicación externa e interna para pymes, con base en las ciencias del comportamiento. Trabajamos con pymes de 10 a 500 personas." />
-  <meta name="keywords" content="consultoría de comunicación, branding para pymes, comunicación interna, identidad visual, estrategia de marca, diagnóstico de comunicación, diseño de marca, naming, manual de identidad, Buenos Aires, Argentina" />
   <meta name="author" content="Conducta." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://conducta.com.ar" />
+  <meta name="theme-color" content="#0B121E" />
+  <link rel="canonical" href="https://conducta.com.ar/" />
 
   <!-- Open Graph / LinkedIn / WhatsApp -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://conducta.com.ar" />
+  <meta property="og:url" content="https://conducta.com.ar/" />
   <meta property="og:title" content="Conducta. | Consultora de comunicación para pymes" />
   <meta property="og:description" content="Consultora de comunicación externa e interna para pymes, con base en las ciencias del comportamiento. Trabajamos con pymes de 10 a 500 personas." />
   <meta property="og:image" content="https://conducta.com.ar/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Conducta. Comunicación interna y externa para pymes." />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Conducta." />
 
@@ -35,24 +38,39 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Conducta.",
-    "description": "Consultora de estrategia de marca y comunicación para pymes, con base en las ciencias del comportamiento.",
-    "url": "https://conducta.com.ar",
-    "telephone": "",
+    "description": "Consultora de comunicación externa e interna para pymes, con base en las ciencias del comportamiento.",
+    "url": "https://conducta.com.ar/",
+    "logo": "https://conducta.com.ar/assets/brand/logotipo-blanco-160.png",
+    "image": "https://conducta.com.ar/og-image.jpg",
+    "email": "somos@conducta.com.ar",
+    "telephone": "+54 9 2954 31-5270",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Buenos Aires",
       "addressCountry": "AR"
     },
-    "serviceType": ["Consultoría de Comunicación", "Comunicación Interna", "Branding", "Identidad Visual", "Estrategia de Marca"],
     "areaServed": "Países de habla hispana",
-    "knowsAbout": ["branding", "identidad visual", "comunicación estratégica", "comunicación interna", "diagnóstico organizacional", "naming", "pymes"]
+    "serviceType": ["Comunicación externa", "Comunicación interna"],
+    "knowsAbout": ["ciencias del comportamiento", "posicionamiento", "naming", "identidad visual", "tono de voz", "comunicación interna", "protocolos de comunicación", "pymes"],
+    "sameAs": [
+      "https://www.instagram.com/somos.conducta/",
+      "https://www.linkedin.com/company/somosconducta"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Román Masimelli",
+      "jobTitle": "Fundador y director"
+    }
   }
   </script>
 
   <!-- Adobe Fonts (Helvetica Neue LT Pro) -->
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="preconnect" href="https://p.typekit.net" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/mdg5mik.css" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  <script src="/assets/js/main.js" defer></script>
+  <!-- ?v= cambia en cada versión: /assets/* se cachea un año (ver _headers) -->
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261027" />
+  <script src="/assets/js/main.js?v=20261027" defer></script>
 </head>
 <body>
 
@@ -62,7 +80,10 @@
   <header class="site-header" id="header">
     <div class="container site-header__inner">
       <a href="#inicio" class="brand">
-        <img src="/isotipo-blanco.png" alt="Conducta. Ir al inicio" width="27" height="36" />
+        <picture>
+          <source srcset="/assets/brand/isotipo-blanco-72.webp" type="image/webp" />
+          <img src="/assets/brand/isotipo-blanco-72.png" alt="Conducta. Ir al inicio" width="27" height="36" />
+        </picture>
       </a>
 
       <nav class="nav" aria-label="Principal">
@@ -104,8 +125,8 @@
     <div class="hero-shell">
       <section class="hero theme-ink cut cut--hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero__media" aria-hidden="true">
-          <img src="/assets/img/hero-poster.jpg" alt="" width="1920" height="1080" />
-          <video class="hero__video" muted loop playsinline preload="none" data-src="/hero-video.mp4"></video>
+          <img src="/assets/img/hero-poster-1920.webp" srcset="/assets/img/hero-poster-1280.webp 1280w, /assets/img/hero-poster-1920.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" />
+          <video class="hero__video" muted loop playsinline preload="metadata" poster="/assets/img/hero-poster-1920.webp" data-src="/assets/video/hero-720.mp4"></video>
         </div>
 
         <div class="container hero__content">
@@ -197,7 +218,7 @@
 
         <article class="grid case case-featured">
           <div class="media cut cut--xl">
-            <img src="/evidenpsia-2.jpg" alt="Tarjetas personales con la identidad de Evidenpsia" width="3000" height="2000" loading="lazy" decoding="async" />
+            <img src="/assets/img/casos/evidenpsia-1600.webp" srcset="/assets/img/casos/evidenpsia-800.webp 800w, /assets/img/casos/evidenpsia-1600.webp 1600w" sizes="(min-width: 1240px) 640px, (min-width: 900px) 55vw, 100vw" alt="Tarjetas personales con la identidad de Evidenpsia" width="1600" height="1200" loading="lazy" decoding="async" />
           </div>
           <div class="case__text-wrap">
             <p class="tag case__tag">Comunicación externa</p>
@@ -216,7 +237,7 @@
         <div class="case-grid">
           <article class="grid case">
             <div class="media cut">
-              <img src="/farmacia-2.jpg" alt="Bolsas de Farmacia Lutilsky con la nueva identidad" width="1200" height="900" loading="lazy" decoding="async" />
+              <img src="/assets/img/casos/farmacia-lutilsky-800.webp" srcset="/assets/img/casos/farmacia-lutilsky-800.webp 800w, /assets/img/casos/farmacia-lutilsky-1200.webp 1200w" sizes="(min-width: 1240px) 352px, (min-width: 1024px) 30vw, (min-width: 640px) 40vw, 100vw" alt="Bolsas de Farmacia Lutilsky con la nueva identidad" width="1200" height="900" loading="lazy" decoding="async" />
             </div>
             <div class="case__text-wrap">
               <p class="tag case__tag">Comunicación externa</p>
@@ -234,7 +255,7 @@
 
           <article class="grid case">
             <div class="media cut">
-              <img src="/ponti-3.jpg" alt="Papelería con la identidad de Ponti" width="3000" height="2000" loading="lazy" decoding="async" />
+              <img src="/assets/img/casos/ponti-800.webp" srcset="/assets/img/casos/ponti-800.webp 800w, /assets/img/casos/ponti-1600.webp 1600w" sizes="(min-width: 1240px) 352px, (min-width: 1024px) 30vw, (min-width: 640px) 40vw, 100vw" alt="Papelería con la identidad de Ponti" width="1600" height="1067" loading="lazy" decoding="async" />
             </div>
             <div class="case__text-wrap">
               <p class="tag case__tag">Comunicación externa</p>
@@ -252,7 +273,7 @@
 
           <article class="grid case">
             <div class="media cut">
-              <img src="/pleno-2.jpg" alt="Cartel de obra con la marca Pleno" width="7501" height="5000" loading="lazy" decoding="async" />
+              <img src="/assets/img/casos/pleno-800.webp" srcset="/assets/img/casos/pleno-800.webp 800w, /assets/img/casos/pleno-1600.webp 1600w" sizes="(min-width: 1240px) 352px, (min-width: 1024px) 30vw, (min-width: 640px) 40vw, 100vw" alt="Cartel de obra con la marca Pleno" width="1600" height="1200" loading="lazy" decoding="async" />
             </div>
             <div class="case__text-wrap">
               <p class="tag case__tag">Comunicación externa</p>
@@ -390,7 +411,10 @@
   <footer class="site-footer theme-ink">
     <div class="container">
       <div class="site-footer__top">
-        <img class="site-footer__logo" src="/logo-blanco.png" alt="Conducta." width="185" height="32" loading="lazy" />
+        <picture>
+          <source srcset="/assets/brand/logotipo-blanco-64.webp" type="image/webp" />
+          <img class="site-footer__logo" src="/assets/brand/logotipo-blanco-64.png" alt="Conducta." width="185" height="32" loading="lazy" decoding="async" />
+        </picture>
 
         <ul class="site-footer__nav" aria-label="Secciones">
           <li><a href="#soluciones">Soluciones</a></li>

@@ -577,6 +577,17 @@ strong { font-weight: 700; }
   .hero__lead { grid-column: 1 / span 6; }
 }
 
+/* Desktop: el hero ocupa la pantalla entera y el contenido queda centrado
+   en vertical (el mismo espacio arriba y abajo, contando el menú). */
+@media (min-width: 1024px) {
+  .hero {
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block: var(--header-h);
+  }
+}
+
 /* 5.2 Soluciones: dos bloques oscuros con corte, uno debajo del otro.
    Título grande, los tres problemas en tres columnas y, en un panel,
    de qué nos encargamos (etiqueta a la izquierda, lista en dos columnas). */

@@ -563,10 +563,24 @@ strong { font-weight: 700; }
 
 /* 5.3 Casos */
 .case__tag { margin-bottom: 8px; }
-.case__name { margin-bottom: 16px; }
-.case__text p { color: var(--fg-2); }
-.case__text p + p { margin-top: 12px; }
-.case__text .case__result { color: var(--fg-1); font-weight: 700; }
+.case__name { margin-bottom: 20px; }
+
+.case__facts dt {
+  font-size: var(--fs-small);
+  color: var(--fg-2);
+}
+
+.case__facts dd {
+  max-width: var(--measure);
+  color: var(--fg-2);
+}
+
+.case__facts dd + dt { margin-top: 14px; }
+
+.case__facts .case__result {
+  color: var(--fg-1);
+  font-weight: 700;
+}
 
 .case-featured {
   row-gap: 32px;

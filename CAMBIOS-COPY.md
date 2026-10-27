@@ -28,6 +28,10 @@ Registro de cada texto nuevo, modificado o eliminado respecto de la versión en 
 - Después: 1.° Comunicación interna (bloque navy), 2.° Comunicación externa (bloque ink). Arriba, tres problemas en forma de pregunta en Bold; abajo, un panel con "¿De qué nos encargamos?" y los entregables con un marcador en forma de corte; al pie, el botón "Agendá una consulta".
 - Origen: Ronda 2. Excepción a la regla de orden (externa, después interna), como el H1.
 
+**Qué resolvemos: ajuste de diseño (segundo pedido)**
+- Las dos tarjetas pasan a ocupar todo el ancho, una debajo de la otra. El título de cada tarjeta es más grande (28 a 40 px Bold) y las tres preguntas van en tres columnas, cada una con una línea fina arriba, en Regular para que no compitan con el título. En el panel, "¿De qué nos encargamos?" queda a la izquierda y los entregables en dos columnas. En el celular, las preguntas y la lista van en una columna.
+- Origen: Ronda 2. Suma un paso a la escala tipográfica (--fs-title), que ahora tiene 7.
+
 **Comunicación interna, problemas** (reemplaza "Cuándo nos llaman")
 - Antes: "La información se pierde entre áreas." / "Los mismos conflictos se repiten entre equipos o niveles." / "No está claro quién comunica qué, ni por qué canal."
 - Después: "¿La información se pierde entre áreas?" / "¿Los mismos conflictos se repiten entre equipos o niveles?" / "¿No está claro quién comunica qué, ni por qué canal?"

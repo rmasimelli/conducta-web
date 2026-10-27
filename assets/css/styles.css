@@ -26,10 +26,11 @@
   --line-light: rgba(11,18,30,.10);
   --surface-light: rgba(28,57,92,.05);
 
-  /* Tipografía (6 pasos, nada fuera de esta escala) */
+  /* Tipografía (7 pasos, nada fuera de esta escala) */
   --font: "helvetica-neue-lt-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --fs-display: clamp(2.75rem, 5.6vw, 5rem);    /* H1 */
   --fs-h2: clamp(2.125rem, 3.8vw, 3.5rem);
+  --fs-title: clamp(1.75rem, 3vw, 2.5rem);     /* títulos de las tarjetas de servicios */
   --fs-h3: clamp(1.25rem, 1.6vw, 1.5rem);
   --fs-lead: clamp(1.125rem, 1.4vw, 1.3125rem);
   --fs-body: 1.0625rem;                          /* 17 px */
@@ -579,8 +580,9 @@ strong { font-weight: 700; }
   .hero__lead { grid-column: 1 / span 6; }
 }
 
-/* 5.2 Soluciones: dos bloques oscuros con corte, como el hero.
-   Arriba los problemas en forma de pregunta; abajo, en un panel, de qué nos encargamos. */
+/* 5.2 Soluciones: dos bloques oscuros con corte, uno debajo del otro.
+   Título grande, los tres problemas en tres columnas y, en un panel,
+   de qué nos encargamos (etiqueta a la izquierda, lista en dos columnas). */
 .services {
   display: grid;
   gap: var(--grid-gap);
@@ -589,39 +591,40 @@ strong { font-weight: 700; }
 .service {
   display: flex;
   flex-direction: column;
-  padding: clamp(24px, 4vw, 56px);
+  padding: clamp(28px, 5vw, 72px);
 }
 
 .service__title {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-snug);
-  letter-spacing: var(--tracking-h3);
-  color: var(--fg-2);
+  font-size: var(--fs-title);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-h2);
 }
 
 .service__pains {
-  margin-top: clamp(20px, 2.4vw, 32px);
+  display: grid;
+  gap: 28px;
+  margin-top: clamp(32px, 4vw, 56px);
 }
 
 .service__pains li {
-  max-width: 30ch;
+  padding-top: 20px;
+  border-top: 1px solid rgba(248,249,250,.24);
   font-size: var(--fs-lead);
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: var(--tracking-h3);
+  line-height: 1.4;
+  color: var(--fg-1);
 }
 
-.service__pains li + li { margin-top: clamp(14px, 1.6vw, 20px); }
-
 .service__solution {
-  margin-top: clamp(32px, 4vw, 48px);
-  padding: clamp(20px, 2.4vw, 32px);
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(24px, 3vw, 40px);
   background: rgba(248,249,250,.06);
 }
 
 .service__solution h4 {
-  margin-bottom: 16px;
-  font-size: var(--fs-body);
+  margin-bottom: 20px;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-h3);
 }
 
 .service__solution li { color: var(--fg-2); }
@@ -631,8 +634,33 @@ strong { font-weight: 700; }
   padding-top: clamp(32px, 4vw, 48px);
 }
 
-@media (min-width: 900px) {
-  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) {
+  .service__pains {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+
+  /* Dos columnas que se llenan de arriba hacia abajo: sin huecos entre ítems */
+  .service__solution .marks {
+    columns: 2;
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+
+  .service__solution .marks li {
+    break-inside: avoid;
+    margin: 0 0 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service__solution {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+  }
+
+  .service__solution h4 { grid-column: 1 / span 4; margin-bottom: 0; }
+  .service__solution .marks { grid-column: 5 / -1; }
 }
 
 /* 5.3 Casos */

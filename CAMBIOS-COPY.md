@@ -318,11 +318,9 @@ Cada caso muestra ahora, sin hover: frente ("Comunicación externa"), cliente, s
 
 | Dónde | Qué falta |
 |---|---|
-| Nosotros | Foto de Román (vertical 4:5, buena luz, fondo neutro) |
-| Hero, fila de clientes | Logos de Evidenpsia, Farmacia Lutilsky, Ponti y Soluciones Analíticas (SVG o PNG transparente) |
-| Casos, Soluciones Analíticas | Opcional: foto o logo para reemplazar el panel con el nombre |
+| Ninguno de contenido | |
 
-Resueltos en la ronda 2: resultado de Farmacia Lutilsky, caso Pleno (eliminado) y respuesta a la pregunta 2.
+Resueltos en la ronda 2: resultado de Farmacia Lutilsky, caso Pleno (eliminado), respuesta a la pregunta 2, foto de Román y logos de los cuatro clientes. Los logos se pasaron a blanco con fondo transparente (al de Soluciones Analíticas se le quitó el fondo blanco) y se muestran al 60% de opacidad, con el alto compensado para que pesen parecido. El de Soluciones Analíticas también reemplaza al panel con el nombre en su caso.
 
 ## Para revisar antes de publicar
 

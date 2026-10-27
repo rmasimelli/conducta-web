@@ -59,7 +59,8 @@
     "founder": {
       "@type": "Person",
       "name": "Román Masimelli",
-      "jobTitle": "Fundador y director"
+      "jobTitle": "Fundador y director",
+      "image": "https://conducta.com.ar/assets/img/roman-960.webp"
     }
   }
   </script>
@@ -71,8 +72,8 @@
   <link rel="preconnect" href="https://p.typekit.net" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/mdg5mik.css" />
   <!-- ?v= cambia en cada versión: /assets/* se cachea un año (ver _headers) -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20261027-3" />
-  <script src="/assets/js/main.js?v=20261027-3" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261027-4" />
+  <script src="/assets/js/main.js?v=20261027-4" defer></script>
 </head>
 <body>
 
@@ -142,12 +143,12 @@
               </div>
               <p class="hero__note">Por WhatsApp. La primera consulta no tiene costo.</p>
             </div>
-            <!-- Provisorio: los nombres se reemplazan por los logos de cada cliente (D9) -->
+            <!-- Logos en blanco; el alto de cada uno está compensado para que pesen parecido (D9) -->
             <ul class="clients" aria-label="Clientes">
-              <li>Evidenpsia</li>
-              <li>Farmacia Lutilsky</li>
-              <li>Ponti</li>
-              <li>Soluciones Analíticas</li>
+              <li><img src="/assets/img/clientes/evidenpsia.webp" alt="Evidenpsia" width="144" height="30" style="--logo-h: 30px" decoding="async" /></li>
+              <li><img src="/assets/img/clientes/farmacia-lutilsky.webp" alt="Farmacia Lutilsky" width="138" height="46" style="--logo-h: 46px" decoding="async" /></li>
+              <li><img src="/assets/img/clientes/ponti.webp" alt="Project Ponti" width="129" height="42" style="--logo-h: 42px" decoding="async" /></li>
+              <li><img src="/assets/img/clientes/soluciones-analiticas.webp" alt="Soluciones Analíticas" width="184" height="44" style="--logo-h: 44px" decoding="async" /></li>
             </ul>
           </div>
         </div>
@@ -268,9 +269,9 @@
           </article>
 
           <article class="grid case" data-reveal style="--reveal-delay: 240ms">
-            <!-- Sin imágenes de marca: panel tipográfico (brief §6.3). Se reemplaza si hay foto o logo. -->
-            <div class="media media--type cut" aria-hidden="true">
-              <p>Soluciones Analíticas</p>
+            <!-- Sin fotos de marca: panel navy con el logo (brief §6.3) -->
+            <div class="media media--logo cut">
+              <img src="/assets/img/clientes/soluciones-analiticas.webp" alt="Logo de Soluciones Analíticas" width="401" height="96" loading="lazy" decoding="async" />
             </div>
             <div class="case__text-wrap">
               <p class="tag case__tag">Comunicación interna</p>
@@ -349,8 +350,7 @@
 
         <aside class="person" data-reveal style="--reveal-delay: 120ms" aria-label="Quién dirige Conducta">
           <div class="media cut cut--xl">
-            <!-- Falta roman-foto.jpg (vertical, 4:5) -->
-            <p class="photo-slot">[COMPLETAR: foto de Román]</p>
+            <img src="/assets/img/roman-960.webp" srcset="/assets/img/roman-480.webp 480w, /assets/img/roman-960.webp 960w" sizes="(min-width: 900px) 440px, (min-width: 480px) 440px, 100vw" alt="Román Masimelli, fundador y director de Conducta" width="960" height="1200" loading="lazy" decoding="async" />
           </div>
           <h3 class="h3 person__name">Román Masimelli</h3>
           <p class="person__role">Fundador y director</p>

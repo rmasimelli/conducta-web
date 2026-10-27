@@ -317,20 +317,20 @@ strong { font-weight: 700; }
   object-fit: cover;
 }
 
-/* Panel tipográfico: ocupa el lugar de la imagen cuando un caso no tiene fotos */
-.media--type {
+/* Panel con logo: ocupa el lugar de la imagen cuando un caso no tiene fotos */
+.media--logo {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 4 / 3;
-  padding: clamp(20px, 2.4vw, 32px);
+  padding: clamp(24px, 3vw, 40px);
   background: var(--navy);
 }
 
-.media--type p {
-  font-size: var(--fs-h2);
-  font-weight: 700;
-  line-height: var(--lh-tight);
-  letter-spacing: var(--tracking-h2);
+.case-grid .media.media--logo img {
+  width: 72%;
+  max-width: 320px;
+  aspect-ratio: auto;
 }
 
 /* Lista con marcador en forma de corte (el isotipo en miniatura) */
@@ -554,15 +554,15 @@ strong { font-weight: 700; }
   margin-top: clamp(48px, 7vw, 96px);
 }
 
-.clients li {
-  color: var(--fg-3);
-  font-weight: 700;
-}
-
+/* Cada logo trae su alto en --logo-h; en mobile se achican un 20% */
 .clients img {
-  height: 28px;
+  height: calc(var(--logo-h, 32px) * .8);
   width: auto;
   opacity: .6;
+}
+
+@media (min-width: 640px) {
+  .clients img { height: var(--logo-h, 32px); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -879,15 +879,9 @@ strong { font-weight: 700; }
 
 .person .media { aspect-ratio: 4 / 5; }
 
-.photo-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.person .media img {
   height: 100%;
-  padding: 24px;
-  color: var(--fg-2);
-  font-size: var(--fs-small);
-  text-align: center;
+  object-fit: cover;
 }
 
 .person__name { margin-top: 28px; }

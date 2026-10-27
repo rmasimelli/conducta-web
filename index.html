@@ -64,13 +64,15 @@
   }
   </script>
 
+  <script>document.documentElement.classList.add('js')</script>
+
   <!-- Adobe Fonts (Helvetica Neue LT Pro) -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin />
   <link rel="preconnect" href="https://p.typekit.net" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/mdg5mik.css" />
   <!-- ?v= cambia en cada versión: /assets/* se cachea un año (ver _headers) -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=20261027" />
-  <script src="/assets/js/main.js?v=20261027" defer></script>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=20261027-2" />
+  <script src="/assets/js/main.js?v=20261027-2" defer></script>
 </head>
 <body>
 
@@ -132,7 +134,7 @@
         <div class="container hero__content">
           <div class="grid">
             <h1 class="display hero__title" id="hero-title" data-enter="1">Comunicación interna y externa para pymes<span class="dot">.</span></h1>
-            <p class="hero__lead" data-enter="2">Ordenamos cómo tu empresa se comunica con sus clientes y cómo se comunican tus equipos entre sí, con base en las ciencias del comportamiento. Trabajamos con pymes de 10 a 500 personas.</p>
+            <p class="hero__lead" data-enter="2">Ordenamos cómo tu empresa se comunica con sus clientes y cómo se comunican tus equipos entre sí, con base en las ciencias del comportamiento.</p>
             <div data-enter="3">
               <div class="hero__actions">
                 <a class="btn" href="https://wa.me/5492954315270?text=Hola%2C%20quiero%20coordinar%20una%20consulta%20inicial%20para%20mi%20empresa." target="_blank" rel="noopener">Agendá una consulta<span class="sr-only"> (se abre en otra pestaña)</span></a>
@@ -145,7 +147,7 @@
               <li>Evidenpsia</li>
               <li>Farmacia Lutilsky</li>
               <li>Ponti</li>
-              <li>Pleno</li>
+              <li>Soluciones Analíticas</li>
             </ul>
           </div>
         </div>
@@ -155,24 +157,40 @@
     <!-- 2. Soluciones -->
     <section class="section theme-paper" id="soluciones" aria-labelledby="soluciones-title">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <h2 class="section-title" id="soluciones-title">Qué resolvemos<span class="dot">.</span></h2>
         </header>
 
         <div class="services">
-          <article class="card cut service">
-            <h3 class="h3">Comunicación externa</h3>
-            <div class="service__group">
-              <h4>Cuándo nos llaman</h4>
-              <ul>
-                <li>La marca no refleja el nivel real de la empresa.</li>
-                <li>Las consultas no se convierten en ventas.</li>
-                <li>Hay que lanzar una marca nueva o rediseñar la actual.</li>
+          <article class="service theme-navy cut cut--xl" data-reveal>
+            <h3 class="service__title">Comunicación interna</h3>
+            <ul class="service__pains" aria-label="Problemas que resolvemos">
+              <li>¿La información se pierde entre áreas?</li>
+              <li>¿Los mismos conflictos se repiten entre equipos o niveles?</li>
+              <li>¿No está claro quién comunica qué, ni por qué canal?</li>
+            </ul>
+            <div class="service__solution cut">
+              <h4>¿De qué nos encargamos?</h4>
+              <ul class="marks">
+                <li>Diagnóstico de patrones de comunicación entre áreas, equipos y niveles</li>
+                <li>Distinción entre fricciones estructurales e interpersonales</li>
+                <li>Protocolos formales de comunicación</li>
+                <li>Documentos operativos con roles y canales definidos</li>
               </ul>
             </div>
-            <div class="service__group">
-              <h4>Qué entregamos</h4>
-              <ul>
+            <p class="service__cta"><a class="btn" href="https://wa.me/5492954315270?text=Hola%2C%20quiero%20coordinar%20una%20consulta%20inicial%20para%20mi%20empresa." target="_blank" rel="noopener">Agendá una consulta<span class="sr-only"> (se abre en otra pestaña)</span></a></p>
+          </article>
+
+          <article class="service theme-ink cut cut--xl" data-reveal style="--reveal-delay: 120ms">
+            <h3 class="service__title">Comunicación externa</h3>
+            <ul class="service__pains" aria-label="Problemas que resolvemos">
+              <li>¿Tu marca no refleja el nivel real de tu empresa?</li>
+              <li>¿Las consultas no se convierten en ventas?</li>
+              <li>¿Necesitás lanzar una marca nueva o rediseñar la actual?</li>
+            </ul>
+            <div class="service__solution cut">
+              <h4>¿De qué nos encargamos?</h4>
+              <ul class="marks">
                 <li>Diagnóstico de comunicación externa (digital, identidad visual y proceso de ventas)</li>
                 <li>Posicionamiento</li>
                 <li>Naming</li>
@@ -181,29 +199,7 @@
                 <li>Estrategia de redes</li>
               </ul>
             </div>
-            <p class="service__cta"><a class="link" href="https://wa.me/5492954315270?text=Hola%2C%20quiero%20coordinar%20una%20consulta%20inicial%20para%20mi%20empresa." target="_blank" rel="noopener">Agendá una consulta<span class="sr-only"> (se abre en otra pestaña)</span></a></p>
-          </article>
-
-          <article class="card cut service">
-            <h3 class="h3">Comunicación interna</h3>
-            <div class="service__group">
-              <h4>Cuándo nos llaman</h4>
-              <ul>
-                <li>La información se pierde entre áreas.</li>
-                <li>Los mismos conflictos se repiten entre equipos o niveles.</li>
-                <li>No está claro quién comunica qué, ni por qué canal.</li>
-              </ul>
-            </div>
-            <div class="service__group">
-              <h4>Qué entregamos</h4>
-              <ul>
-                <li>Diagnóstico de patrones de comunicación entre áreas, equipos y niveles</li>
-                <li>Distinción entre fricciones estructurales e interpersonales</li>
-                <li>Protocolos formales de comunicación</li>
-                <li>Documentos operativos con roles y canales definidos</li>
-              </ul>
-            </div>
-            <p class="service__cta"><a class="link" href="https://wa.me/5492954315270?text=Hola%2C%20quiero%20coordinar%20una%20consulta%20inicial%20para%20mi%20empresa." target="_blank" rel="noopener">Agendá una consulta<span class="sr-only"> (se abre en otra pestaña)</span></a></p>
+            <p class="service__cta"><a class="btn" href="https://wa.me/5492954315270?text=Hola%2C%20quiero%20coordinar%20una%20consulta%20inicial%20para%20mi%20empresa." target="_blank" rel="noopener">Agendá una consulta<span class="sr-only"> (se abre en otra pestaña)</span></a></p>
           </article>
         </div>
       </div>
@@ -212,11 +208,11 @@
     <!-- 3. Casos -->
     <section class="section theme-ink" id="casos" aria-labelledby="casos-title">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <h2 class="section-title" id="casos-title">Casos<span class="dot">.</span></h2>
         </header>
 
-        <article class="grid case case-featured">
+        <article class="grid case case-featured" data-reveal>
           <div class="media cut cut--xl">
             <img src="/assets/img/casos/evidenpsia-1600.webp" srcset="/assets/img/casos/evidenpsia-800.webp 800w, /assets/img/casos/evidenpsia-1600.webp 1600w" sizes="(min-width: 1240px) 640px, (min-width: 900px) 55vw, 100vw" alt="Tarjetas personales con la identidad de Evidenpsia" width="1600" height="1200" loading="lazy" decoding="async" />
           </div>
@@ -235,7 +231,7 @@
         </article>
 
         <div class="case-grid">
-          <article class="grid case">
+          <article class="grid case" data-reveal>
             <div class="media cut">
               <img src="/assets/img/casos/farmacia-lutilsky-800.webp" srcset="/assets/img/casos/farmacia-lutilsky-800.webp 800w, /assets/img/casos/farmacia-lutilsky-1200.webp 1200w" sizes="(min-width: 1240px) 352px, (min-width: 1024px) 30vw, (min-width: 640px) 40vw, 100vw" alt="Bolsas de Farmacia Lutilsky con la nueva identidad" width="1200" height="900" loading="lazy" decoding="async" />
             </div>
@@ -248,12 +244,12 @@
                 <dt>Qué hicimos</dt>
                 <dd>A partir de un diagnóstico estratégico, rediseñamos su identidad visual completa (logo, sistema visual e isotipo heráldico).</dd>
                 <dt>Resultado</dt>
-                <dd class="case__result">[COMPLETAR: resultado observable]</dd>
+                <dd class="case__result">Aumentaron las ventas de los productos de mayor valor.</dd>
               </dl>
             </div>
           </article>
 
-          <article class="grid case">
+          <article class="grid case" data-reveal style="--reveal-delay: 120ms">
             <div class="media cut">
               <img src="/assets/img/casos/ponti-800.webp" srcset="/assets/img/casos/ponti-800.webp 800w, /assets/img/casos/ponti-1600.webp 1600w" sizes="(min-width: 1240px) 352px, (min-width: 1024px) 30vw, (min-width: 640px) 40vw, 100vw" alt="Papelería con la identidad de Ponti" width="1600" height="1067" loading="lazy" decoding="async" />
             </div>
@@ -271,20 +267,21 @@
             </div>
           </article>
 
-          <article class="grid case">
-            <div class="media cut">
-              <img src="/assets/img/casos/pleno-800.webp" srcset="/assets/img/casos/pleno-800.webp 800w, /assets/img/casos/pleno-1600.webp 1600w" sizes="(min-width: 1240px) 352px, (min-width: 1024px) 30vw, (min-width: 640px) 40vw, 100vw" alt="Cartel de obra con la marca Pleno" width="1600" height="1200" loading="lazy" decoding="async" />
+          <article class="grid case" data-reveal style="--reveal-delay: 240ms">
+            <!-- Sin imágenes de marca: panel tipográfico (brief §6.3). Se reemplaza si hay foto o logo. -->
+            <div class="media media--type cut" aria-hidden="true">
+              <p>Soluciones Analíticas</p>
             </div>
             <div class="case__text-wrap">
-              <p class="tag case__tag">Comunicación externa</p>
-              <h3 class="h3 case__name">Pleno</h3>
+              <p class="tag case__tag">Comunicación interna</p>
+              <h3 class="h3 case__name">Soluciones Analíticas</h3>
               <dl class="case__facts">
                 <dt>Situación</dt>
-                <dd>[COMPLETAR: situación]</dd>
+                <dd>Había problemas de comunicación entre áreas.</dd>
                 <dt>Qué hicimos</dt>
-                <dd>Diseñamos y desarrollamos el sitio web de Pleno, aplicando su sistema de identidad visual.</dd>
+                <dd>Diseñamos y realizamos entrevistas a medida, medimos los datos y entregamos planes estratégicos de mejora.</dd>
                 <dt>Resultado</dt>
-                <dd class="case__result">[COMPLETAR: resultado observable]</dd>
+                <dd class="case__result">Mayor velocidad en la ejecución de tareas, menos fricciones operativas y mayor bienestar del equipo.</dd>
               </dl>
             </div>
           </article>
@@ -295,46 +292,62 @@
     <!-- 4. Método -->
     <section class="section theme-navy" id="metodo" aria-labelledby="metodo-title">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <h2 class="section-title" id="metodo-title">Método Conducta<span class="dot">.</span></h2>
           <p class="section-lead">Cada proyecto pasa por estas fases, en este orden. Ninguna decisión de marca, mensaje o protocolo se toma sin la anterior.</p>
         </header>
 
-        <ol class="steps">
-          <li class="step">
-            <span class="step__num" aria-hidden="true">01</span>
-            <h3 class="h3 step__title">Diagnóstico funcional</h3>
-            <p>Identificamos qué conductas produce hoy tu comunicación (en clientes o dentro de los equipos) y qué las está causando.</p>
-          </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">02</span>
-            <h3 class="h3 step__title">Diseño de marco relacional</h3>
-            <p>Definimos qué tiene que asociar la gente con tu marca o con tu comunicación interna para responder como necesitás.</p>
-          </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">03</span>
-            <h3 class="h3 step__title">Arquitectura de decisión</h3>
-            <p>Diseñamos piezas, canales y protocolos para que la conducta buscada sea la más fácil de elegir.</p>
-          </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">04</span>
-            <h3 class="h3 step__title">Verificación conductual</h3>
-            <p>Medimos si las conductas cambiaron y ajustamos lo que no funcionó.</p>
-          </li>
-        </ol>
+        <!-- Sin JS se ven las 4 fases en fila. Con JS, main.js arma las pestañas (data-method). -->
+        <div class="method" data-method data-reveal>
+          <div class="method__tabs" role="tablist" aria-label="Fases del Método Conducta" hidden>
+            <button class="method__tab" type="button" role="tab" id="fase-tab-1" aria-controls="fase-1" aria-selected="true"><span class="method__tab-num">01</span><span class="method__tab-name">Diagnóstico funcional</span></button>
+            <button class="method__tab" type="button" role="tab" id="fase-tab-2" aria-controls="fase-2" aria-selected="false" tabindex="-1"><span class="method__tab-num">02</span><span class="method__tab-name">Diseño de marco relacional</span></button>
+            <button class="method__tab" type="button" role="tab" id="fase-tab-3" aria-controls="fase-3" aria-selected="false" tabindex="-1"><span class="method__tab-num">03</span><span class="method__tab-name">Arquitectura de decisión</span></button>
+            <button class="method__tab" type="button" role="tab" id="fase-tab-4" aria-controls="fase-4" aria-selected="false" tabindex="-1"><span class="method__tab-num">04</span><span class="method__tab-name">Verificación conductual</span></button>
+            <span class="method__track" aria-hidden="true"><span class="method__progress"></span></span>
+          </div>
+
+          <div class="steps">
+            <div class="step" id="fase-1">
+              <span class="step__num" aria-hidden="true">01</span>
+              <h3 class="h3 step__title">Diagnóstico funcional</h3>
+              <p>Identificamos qué conductas produce hoy tu comunicación (en clientes o dentro de los equipos) y qué las está causando.</p>
+            </div>
+            <div class="step" id="fase-2">
+              <span class="step__num" aria-hidden="true">02</span>
+              <h3 class="h3 step__title">Diseño de marco relacional</h3>
+              <p>Definimos qué tiene que asociar la gente con tu marca o con tu comunicación interna para responder como necesitás.</p>
+            </div>
+            <div class="step" id="fase-3">
+              <span class="step__num" aria-hidden="true">03</span>
+              <h3 class="h3 step__title">Arquitectura de decisión</h3>
+              <p>Diseñamos piezas, canales y protocolos para que la conducta buscada sea la más fácil de elegir.</p>
+            </div>
+            <div class="step" id="fase-4">
+              <span class="step__num" aria-hidden="true">04</span>
+              <h3 class="h3 step__title">Verificación conductual</h3>
+              <p>Medimos si las conductas cambiaron y ajustamos lo que no funcionó.</p>
+            </div>
+          </div>
+
+          <div class="method__nav" hidden>
+            <button class="method__btn link" type="button" data-step="prev">Fase anterior</button>
+            <button class="method__btn link" type="button" data-step="next">Fase siguiente</button>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- 5. Nosotros -->
     <section class="section theme-paper" id="nosotros" aria-labelledby="nosotros-title">
       <div class="container grid about">
-        <div class="about__text">
+        <div class="about__text" data-reveal>
           <h2 class="section-title" id="nosotros-title">Quiénes somos<span class="dot">.</span></h2>
           <p>Somos una consultora de comunicación para pymes. Aplicamos las ciencias del comportamiento a dos frentes: cómo se comunica la empresa con sus clientes y cómo se comunican sus equipos entre sí. Cada decisión de marca, mensaje o protocolo parte de un diagnóstico y apunta a resultados que se pueden observar.</p>
           <p>Trabajamos con pymes de 10 a 500 personas, en cualquier país de habla hispana. Es el tamaño en el que ya hay estructura para implementar lo que entregamos y todavía no hay un equipo propio resolviendo esto.</p>
         </div>
 
-        <aside class="person" aria-label="Quién dirige Conducta">
+        <aside class="person" data-reveal style="--reveal-delay: 120ms" aria-label="Quién dirige Conducta">
           <div class="media cut cut--xl">
             <!-- Falta roman-foto.jpg (vertical, 4:5) -->
             <p class="photo-slot">[COMPLETAR: foto de Román]</p>
@@ -354,18 +367,18 @@
     <!-- 6. Preguntas frecuentes -->
     <section class="section theme-paper" id="preguntas" aria-labelledby="preguntas-title">
       <div class="container grid faq">
-        <div class="faq__head">
+        <div class="faq__head" data-reveal>
           <h2 class="section-title" id="preguntas-title">Preguntas frecuentes<span class="dot">.</span></h2>
         </div>
 
-        <div class="faq__list">
+        <div class="faq__list" data-reveal style="--reveal-delay: 120ms">
           <div class="faq__item">
             <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1">¿Por qué no hay precios en esta web?<span class="faq__icon" aria-hidden="true"></span></button></h3>
             <div class="faq__a" id="faq-1"><div><p>Cotizamos después del diagnóstico, porque el costo depende del problema real de cada empresa. Lo definimos después de la primera conversación.</p></div></div>
           </div>
           <div class="faq__item">
             <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2">¿Qué pasa en la consulta inicial?<span class="faq__icon" aria-hidden="true"></span></button></h3>
-            <div class="faq__a" id="faq-2"><div><p>[COMPLETAR: qué pasa en la consulta inicial. Aclarar que no tiene costo y qué se lleva el cliente de esa conversación.]</p></div></div>
+            <div class="faq__a" id="faq-2"><div><p>Es una primera conversación, sin costo. Nos contás qué está pasando en tu empresa y te hacemos algunas preguntas para entender el problema. Al terminar te decimos con claridad si podemos ayudarte y, si es así, cuál sería el primer paso.</p></div></div>
           </div>
           <div class="faq__item">
             <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3">¿Cómo empieza un proyecto?<span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -394,7 +407,7 @@
     <!-- 7. Contacto -->
     <section class="section theme-ink contact" id="contacto" aria-labelledby="contacto-title">
       <div class="container grid">
-        <div class="contact__body">
+        <div class="contact__body" data-reveal>
           <h2 class="section-title" id="contacto-title">Hablemos de tu pyme<span class="dot">.</span></h2>
           <p class="section-lead">Contanos qué está pasando en tu empresa. La primera consulta no tiene costo y te decimos con claridad si podemos ayudarte.</p>
           <div class="contact__actions">

@@ -316,10 +316,54 @@ strong { font-weight: 700; }
   object-fit: cover;
 }
 
-/* Tarjeta de servicio: el único tipo de tarjeta de la página */
-.card {
-  background: var(--surface);
-  padding: clamp(24px, 3vw, 40px);
+/* Panel tipográfico: ocupa el lugar de la imagen cuando un caso no tiene fotos */
+.media--type {
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 4 / 3;
+  padding: clamp(20px, 2.4vw, 32px);
+  background: var(--navy);
+}
+
+.media--type p {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-h2);
+}
+
+/* Lista con marcador en forma de corte (el isotipo en miniatura) */
+.marks li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.marks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 9px;
+  height: 9px;
+  background: var(--fg-2);
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 55% 100%, 0 100%);
+}
+
+.marks li + li { margin-top: 10px; }
+
+/* Aparición al hacer scroll: main.js agrega .is-visible. Sin JS o con
+   "reducir movimiento", todo se ve desde el principio. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 700ms var(--ease) var(--reveal-delay, 0ms), transform 700ms var(--ease) var(--reveal-delay, 0ms);
+  }
+
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* 5. Secciones ------------------------------------------------------------- */
@@ -535,7 +579,8 @@ strong { font-weight: 700; }
   .hero__lead { grid-column: 1 / span 6; }
 }
 
-/* 5.2 Soluciones */
+/* 5.2 Soluciones: dos bloques oscuros con corte, como el hero.
+   Arriba los problemas en forma de pregunta; abajo, en un panel, de qué nos encargamos. */
 .services {
   display: grid;
   gap: var(--grid-gap);
@@ -544,18 +589,47 @@ strong { font-weight: 700; }
 .service {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  padding: clamp(24px, 4vw, 56px);
 }
 
-.service__group h4 {
-  margin-bottom: 12px;
+.service__title {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-h3);
+  color: var(--fg-2);
+}
+
+.service__pains {
+  margin-top: clamp(20px, 2.4vw, 32px);
+}
+
+.service__pains li {
+  max-width: 30ch;
+  font-size: var(--fs-lead);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: var(--tracking-h3);
+}
+
+.service__pains li + li { margin-top: clamp(14px, 1.6vw, 20px); }
+
+.service__solution {
+  margin-top: clamp(32px, 4vw, 48px);
+  padding: clamp(20px, 2.4vw, 32px);
+  background: rgba(248,249,250,.06);
+}
+
+.service__solution h4 {
+  margin-bottom: 16px;
   font-size: var(--fs-body);
 }
 
-.service__group li { color: var(--fg-2); }
-.service__group li + li { margin-top: 8px; }
+.service__solution li { color: var(--fg-2); }
 
-.service__cta { margin-top: auto; }
+.service__cta {
+  margin-top: auto;
+  padding-top: clamp(32px, 4vw, 48px);
+}
 
 @media (min-width: 900px) {
   .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -639,6 +713,132 @@ strong { font-weight: 700; }
 
 @media (min-width: 1024px) {
   .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* Método interactivo (main.js agrega .is-interactive): pestañas con una
+   línea de avance arriba y una sola fase visible por vez. */
+.method__tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+}
+
+.method__tabs[hidden],
+.method__nav[hidden] { display: none; }
+
+.method__track {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: rgba(248,249,250,.16);
+}
+
+.method__progress {
+  display: block;
+  width: var(--progress, 25%);
+  height: 100%;
+  background: var(--fg-1);
+  transition: width var(--dur) var(--ease);
+}
+
+.method__tab {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 44px;
+  padding-top: 20px;
+  color: var(--fg-2);
+  text-align: left;
+  transition: color 200ms var(--ease);
+}
+
+.method__tab:hover,
+.method__tab[aria-selected="true"] { color: var(--fg-1); }
+
+.method__tab-num {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--fg-3);
+}
+
+.method__tab[aria-selected="true"] .method__tab-num { color: var(--fg-1); }
+.method__tab[aria-selected="true"] .method__tab-name { font-weight: 700; }
+
+.method__tab-name {
+  font-size: var(--fs-small);
+  line-height: 1.35;
+}
+
+/* En mobile solo se ven los números; el nombre queda para lectores de pantalla */
+@media (max-width: 639px) {
+  .method__tab-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+.method.is-interactive .steps {
+  display: block;
+  margin-top: clamp(40px, 5vw, 72px);
+}
+
+.method.is-interactive .step[hidden] { display: none; }
+
+.method.is-interactive .step__num {
+  margin-bottom: 16px;
+  font-size: var(--fs-display);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+}
+
+.method.is-interactive .step p {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+}
+
+.method__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.method__btn {
+  min-height: 44px;
+}
+
+.method__btn:disabled {
+  color: var(--fg-3);
+  text-decoration-color: transparent;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .step.is-entering { animation: step-in 480ms var(--ease) both; }
+}
+
+@keyframes step-in {
+  from { opacity: 0; transform: translateX(calc(var(--dir, 1) * 32px)); }
+}
+
+@media (min-width: 900px) {
+  .method.is-interactive .step {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    align-items: end;
+  }
+
+  .method.is-interactive .step__num { grid-column: 1 / span 3; grid-row: 1 / span 2; margin-bottom: 0; }
+  .method.is-interactive .step__title { grid-column: 4 / -1; }
+  .method.is-interactive .step p { grid-column: 4 / span 7; }
+  .method__nav { padding-left: calc((100% + var(--grid-gap)) / 12 * 3); }
 }
 
 /* 5.5 Nosotros */

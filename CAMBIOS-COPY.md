@@ -7,6 +7,75 @@ Registro de cada texto nuevo, modificado o eliminado respecto de la versión en 
 - **Decisión**: aplica una decisión ya marcada en el brief (D1 a D11) o elegida por Román.
 - **Regla**: corrección mínima por las reglas de copy de la sección 4 (rayas, construcciones "No X. Y.", frases prohibidas, mayúsculas).
 - **Propuesta de Claude**: texto que no estaba en el brief. Necesita el OK de Román.
+- **Ronda 2**: cambio pedido por Román sobre el deploy preview (27/10/2026). Manda sobre lo que diga el resto de este documento.
+
+---
+
+## Ronda 2: cambios pedidos por Román sobre el deploy preview
+
+**Hero, párrafo**
+- Antes: "Ordenamos cómo tu empresa se comunica con sus clientes y cómo se comunican tus equipos entre sí, con base en las ciencias del comportamiento. Trabajamos con pymes de 10 a 500 personas."
+- Después: "Ordenamos cómo tu empresa se comunica con sus clientes y cómo se comunican tus equipos entre sí, con base en las ciencias del comportamiento."
+- Origen: Ronda 2. El rango sigue en la descripción para buscadores, en Nosotros y en la pregunta 7.
+
+**Hero, fila de clientes**
+- Antes: Evidenpsia, Farmacia Lutilsky, Ponti, Pleno.
+- Después: Evidenpsia, Farmacia Lutilsky, Ponti, Soluciones Analíticas.
+- Origen: Ronda 2 (Pleno sale de los casos).
+
+**Qué resolvemos: orden y diseño de las tarjetas**
+- Antes: 1.° Comunicación externa, 2.° Comunicación interna. Tarjetas claras con "Cuándo nos llaman" y "Qué entregamos".
+- Después: 1.° Comunicación interna (bloque navy), 2.° Comunicación externa (bloque ink). Arriba, tres problemas en forma de pregunta en Bold; abajo, un panel con "¿De qué nos encargamos?" y los entregables con un marcador en forma de corte; al pie, el botón "Agendá una consulta".
+- Origen: Ronda 2. Excepción a la regla de orden (externa, después interna), como el H1.
+
+**Comunicación interna, problemas** (reemplaza "Cuándo nos llaman")
+- Antes: "La información se pierde entre áreas." / "Los mismos conflictos se repiten entre equipos o niveles." / "No está claro quién comunica qué, ni por qué canal."
+- Después: "¿La información se pierde entre áreas?" / "¿Los mismos conflictos se repiten entre equipos o niveles?" / "¿No está claro quién comunica qué, ni por qué canal?"
+- Origen: Ronda 2.
+
+**Comunicación externa, problemas** (reemplaza "Cuándo nos llaman")
+- Antes: "La marca no refleja el nivel real de la empresa." / "Las consultas no se convierten en ventas." / "Hay que lanzar una marca nueva o rediseñar la actual."
+- Después: "¿Tu marca no refleja el nivel real de tu empresa?" / "¿Las consultas no se convierten en ventas?" / "¿Necesitás lanzar una marca nueva o rediseñar la actual?"
+- Origen: Ronda 2.
+
+**Subtítulo de entregables**
+- Antes: "Qué entregamos"
+- Después: "¿De qué nos encargamos?"
+- Origen: Ronda 2 (de las dos opciones propuestas por Román, la que mejor encaja con una lista de entregables).
+
+**Farmacia Lutilsky, resultado**
+- Antes: [COMPLETAR: resultado observable]
+- Después: "Aumentaron las ventas de los productos de mayor valor."
+- Origen: Ronda 2.
+
+**Pleno**
+- Antes: caso con situación y resultado sin completar.
+- Después: caso eliminado (también sus imágenes).
+- Origen: Ronda 2.
+
+**Soluciones Analíticas** (caso nuevo, Comunicación interna)
+- Antes: no existía.
+- Después:
+  - Situación: "Había problemas de comunicación entre áreas."
+  - Qué hicimos: "Diseñamos y realizamos entrevistas a medida, medimos los datos y entregamos planes estratégicos de mejora."
+  - Resultado: "Mayor velocidad en la ejecución de tareas, menos fricciones operativas y mayor bienestar del equipo."
+  - Imagen: no hay fotos de marca, así que el lugar de la imagen es un panel navy con el nombre del cliente (brief §6.3). Se reemplaza si llega una foto o el logo.
+- Origen: Ronda 2, con redacción ajustada a la de los otros casos.
+
+**Método Conducta: interacción**
+- Antes: las cuatro fases en fila, todas visibles.
+- Después: pestañas 01 a 04 con una línea que avanza; se ve una fase por vez y se pasa con un clic, con las flechas del teclado o con "Fase anterior" y "Fase siguiente". Sin JavaScript se ven las cuatro en fila, como antes. Textos sin cambios.
+- Origen: Ronda 2. Textos nuevos: "Fase anterior" y "Fase siguiente" (Propuesta de Claude).
+
+**Aparición al hacer scroll**
+- Antes: solo se animaba la entrada del hero (brief §5.4).
+- Después: títulos de sección, tarjetas, casos, método, Nosotros, preguntas y contacto aparecen con un fundido y un desplazamiento corto hacia arriba la primera vez que entran en pantalla. Con "reducir movimiento" activado no se anima nada.
+- Origen: Ronda 2. Excepción al brief §5.4.
+
+**Pregunta 2, ¿Qué pasa en la consulta inicial?**
+- Antes: [COMPLETAR]
+- Después: "Es una primera conversación, sin costo. Nos contás qué está pasando en tu empresa y te hacemos algunas preguntas para entender el problema. Al terminar te decimos con claridad si podemos ayudarte y, si es así, cuál sería el primer paso."
+- Origen: Propuesta de Claude, a pedido de Román. No menciona duración ni medio (videollamada, presencial) porque no están definidos; se pueden sumar.
 
 ---
 
@@ -245,16 +314,17 @@ Cada caso muestra ahora, sin hover: frente ("Comunicación externa"), cliente, s
 
 | Dónde | Qué falta |
 |---|---|
-| Casos, Farmacia Lutilsky | Resultado observable (dato concreto, aunque sea cualitativo, y verificable) |
-| Casos, Pleno | Situación y resultado observable. Si no hay, el brief sugiere sacar el caso |
-| Preguntas frecuentes, 2 | Respuesta a "¿Qué pasa en la consulta inicial?" |
 | Nosotros | Foto de Román (vertical 4:5, buena luz, fondo neutro) |
-| Hero, fila de clientes | Logos de Evidenpsia, Farmacia Lutilsky, Ponti y Pleno (SVG o PNG transparente) |
+| Hero, fila de clientes | Logos de Evidenpsia, Farmacia Lutilsky, Ponti y Soluciones Analíticas (SVG o PNG transparente) |
+| Casos, Soluciones Analíticas | Opcional: foto o logo para reemplazar el panel con el nombre |
+
+Resueltos en la ronda 2: resultado de Farmacia Lutilsky, caso Pleno (eliminado) y respuesta a la pregunta 2.
 
 ## Para revisar antes de publicar
 
 - Todo lo marcado como "Brief §7" o "Propuesta de Claude" necesita tu OK.
-- El rango "10 a 500 personas" aparece tres veces en la página: en el hero, en Nosotros y en la pregunta 7.
+- El rango "10 a 500 personas" ahora aparece dos veces en la página (Nosotros y la pregunta 7) y en la descripción para buscadores.
+- Soluciones Analíticas: confirmar que el cliente autoriza aparecer con nombre (el brief registraba que el caso de comunicación interna era confidencial).
 - Evidenpsia: confirmar que "tienen la agenda completa" es correcto.
 - Ponti: el resultado describe lo que se entregó. Si hay algo observado después del lanzamiento, conviene reemplazarlo.
 - La palabra "diagnóstico" sigue en la bajada del método, en Nosotros y en tres respuestas de preguntas frecuentes. La idea de diagnóstico primero se dice como argumento una sola vez, en el método.

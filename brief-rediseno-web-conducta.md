@@ -304,6 +304,7 @@ Foco de teclado en objetos cortados: el anillo de foco tiene que seguir la forma
 - Respuesta a acciones del usuario (abrir FAQ, hover de botón): sí, sutil.
 - Sin carruseles automáticos.
 - Con prefers-reduced-motion activado: nada se anima y el video no se reproduce.
+- Ronda 2 (Román, 27/10/2026): se suman la aparición de los bloques al hacer scroll y el método interactivo (una fase por vez). Excepción a los dos primeros puntos. También pidió invertir el orden de las tarjetas de Qué resolvemos (interna primero), sacar Pleno y sumar el caso Soluciones Analíticas (comunicación interna). Detalle en CAMBIOS-COPY.md.
 
 ## 6. Arquitectura de la página
 
